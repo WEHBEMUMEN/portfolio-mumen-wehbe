@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional portfolio of Mumen Wehbe. Full-Stack developer crafting high-performance, robust software architectures.">
+  <meta name="author" content="Mumen Wehbe">
+  <meta name="theme-color" content="#0a0f1d">
+  
+  <title>Mumen Wehbe | Portfolio</title>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Dynamic ambient background blobs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="nav-container">
+      <a href="#hero" class="logo" id="nav-logo-text">
+        Mumen Wehbe<span class="logo-dot"></span>
+      </a>
+      
+      <nav class="nav-links" id="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      
+      <div class="actions-container">
+        <!-- Language Switcher -->
+        <button class="lang-btn" id="lang-switch-btn" aria-label="Toggle language">
+          <i data-lucide="languages" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+          <span id="lang-switch-text">Français</span>
+        </button>
+        
+        <!-- CV View Link -->
+        <a href="cv-mumen-wehbe-en.pdf" target="_blank" id="nav-cv-download" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.85rem; border-radius: 9999px;">
+          View CV
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="hamburger" id="hamburger-menu" aria-label="Menu Toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <span class="hero-greeting" id="hero-greeting">Hello, I'm</span>
+          <h1 class="hero-name" id="hero-name">Mumen Wehbe</h1>
+          <h2 class="hero-title" id="hero-title">Full-Stack Software Engineer</h2>
+          <p class="hero-subtitle" id="hero-subtitle">
+            Crafting beautiful, high-performance web experiences and reliable backend architectures. Focused on clean code and robust systems.
+          </p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn btn-primary" id="hero-cta-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary" id="hero-cta-secondary">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-visual-wrapper">
+          <div class="hero-visual-card">
+            <img src="images/hero-bg.png" alt="Engineering Digital Twin" onerror="this.parentElement.classList.add('no-image'); this.remove();" class="hero-visual-img" />
+            <div class="hero-visual-fallback-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="section-header">
+        <span class="section-subtitle" id="about-subtitle">My Journey</span>
+        <h2 class="section-title" id="about-title">About Me</h2>
+      </div>
+      <div class="grid-2">
+        <div class="about-portrait-wrapper">
+          <div class="about-portrait-card">
+            <img src="images/profile.png" alt="Mumen Wehbe" onerror="this.parentElement.classList.add('no-image'); this.remove();" class="about-portrait-img" />
+            <div class="about-portrait-fallback">
+              <i data-lucide="cpu" style="width: 48px; height: 48px; stroke-width: 1.5; color: var(--accent-cyan);"></i>
+            </div>
+            <div class="portrait-glow"></div>
+          </div>
+        </div>
+        <div class="about-description">
+          <p class="hero-subtitle" id="about-text-1" style="margin-bottom: 1.5rem; font-size: 1.05rem;"></p>
+          <p class="hero-subtitle" id="about-text-2" style="margin-bottom: 2rem; font-size: 1.05rem;"></p>
+          <div id="about-stats-container" class="about-stats">
+            <!-- Populated Dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-subtitle" id="skills-subtitle">My Technical Stack</span>
+        <h2 class="section-title" id="skills-title">Skills & Expertise</h2>
+      </div>
+      <div class="skills-container" id="skills-categories-container">
+        <!-- Populated Dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <div class="section-header">
+        <span class="section-subtitle" id="exp-subtitle">Where I've Worked</span>
+        <h2 class="section-title" id="exp-title">Professional Experience</h2>
+      </div>
+      <div class="timeline" id="experience-timeline">
+        <!-- Populated Dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <span class="section-subtitle" id="projects-subtitle">Some of My Recent Work</span>
+        <h2 class="section-title" id="projects-title">Featured Projects</h2>
+      </div>
+      
+      <!-- Category filters -->
+      <div class="project-filters" id="project-filters-container">
+        <!-- Populated Dynamically by app.js -->
+      </div>
+      
+      <!-- Projects grid -->
+      <div class="projects-grid" id="projects-grid-container">
+        <!-- Populated Dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="section-header">
+        <span class="section-subtitle" id="contact-subtitle">Let's Collaborate</span>
+        <h2 class="section-title" id="contact-title">Get In Touch</h2>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-info" id="contact-info-container">
+          <!-- Populated Dynamically by app.js -->
+        </div>
+        
+        <div class="card" id="contact-card-container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 3rem 2rem; gap: 1.5rem;">
+          <!-- Populated Dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo" id="footer-logo-text">Mumen Wehbe<span class="logo-dot"></span></div>
+    <div id="footer-copy-text">&copy; 2026 Mumen Wehbe. All rights reserved.</div>
+  </footer>
+
+  <!-- Project Details Modal (Glassmorphic Overlay) -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true" role="dialog">
+    <div class="modal-container">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+        <i data-lucide="x" style="width: 20px; height: 20px; stroke-width: 2.5;"></i>
+      </button>
+      <div class="modal-content" id="modal-dynamic-content">
+        <!-- Populated Dynamically by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Logic (ES Module) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

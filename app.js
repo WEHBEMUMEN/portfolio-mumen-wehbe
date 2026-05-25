@@ -70,10 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // Setup Event Listeners
 function setupEventListeners() {
   // Language Selector
-  elements.langBtn.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'fr' : 'en';
-    localStorage.setItem('portfolio-lang', currentLang);
-    renderPage(currentLang);
+  const langBtns = document.querySelectorAll('#lang-switch-btn, .mobile-lang-btn');
+  langBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'fr' : 'en';
+      localStorage.setItem('portfolio-lang', currentLang);
+      renderPage(currentLang);
+    });
   });
 
   // Mobile Menu Navigation
@@ -112,15 +115,15 @@ function setupEventListeners() {
   // Contact form submission removed in favor of direct email button
   
   // Theme Toggle Button click
-  const themeBtn = document.getElementById('theme-toggle-btn');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
+  const themeBtns = document.querySelectorAll('#theme-toggle-btn, .mobile-theme-btn');
+  themeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       document.documentElement.classList.toggle('light-mode');
       const isLight = document.documentElement.classList.contains('light-mode');
       localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
       updateThemeIcons();
     });
-  }
+  });
   updateThemeIcons();
 }
 
@@ -173,7 +176,11 @@ function renderPage(lang) {
   
   // 2. Navigation
   elements.logo.innerHTML = `Mumen Wehbe<span class="logo-dot"></span>`;
-  elements.langText.textContent = lang === 'en' ? 'Français' : 'English';
+  
+  const langTexts = document.querySelectorAll('#lang-switch-text, .mobile-lang-btn .lang-switch-text');
+  langTexts.forEach(textSlot => {
+    textSlot.textContent = lang === 'en' ? 'Français' : 'English';
+  });
   
   // Render navbar texts
   document.querySelector('[href="#hero"]').textContent = data.nav.home;
@@ -193,10 +200,21 @@ function renderPage(lang) {
   
   // Set CV file source (dynamic based on active language)
   const cvLink = document.getElementById('nav-cv-download');
-  cvLink.textContent = data.nav.downloadCv;
-  cvLink.href = lang === 'en' ? 'cv-mumen-wehbe-en.pdf' : 'cv-mumen-wehbe-fr.pdf';
-  cvLink.target = '_blank';
-  cvLink.removeAttribute('download');
+  const mobileCvLink = document.getElementById('mobile-cv-download');
+  const cvHref = lang === 'en' ? 'cv-mumen-wehbe-en.pdf' : 'cv-mumen-wehbe-fr.pdf';
+  
+  if (cvLink) {
+    cvLink.textContent = data.nav.downloadCv;
+    cvLink.href = cvHref;
+    cvLink.target = '_blank';
+    cvLink.removeAttribute('download');
+  }
+  if (mobileCvLink) {
+    mobileCvLink.textContent = data.nav.downloadCv;
+    mobileCvLink.href = cvHref;
+    mobileCvLink.target = '_blank';
+    mobileCvLink.removeAttribute('download');
+  }
   
   // 4. About Section
   elements.aboutTitle.textContent = data.about.title;
@@ -644,17 +662,21 @@ function getProjectCategoryLabel(category, data) {
 
 // Update Theme Toggle Icons
 function updateThemeIcons() {
-  const sunIcon = document.querySelector('#theme-toggle-btn .sun-icon');
-  const moonIcon = document.querySelector('#theme-toggle-btn .moon-icon');
-  if (!sunIcon || !moonIcon) return;
-
-  if (document.documentElement.classList.contains('light-mode')) {
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
-  } else {
-    sunIcon.style.display = 'block';
-    moonIcon.style.display = 'none';
-  }
+  const isLight = document.documentElement.classList.contains('light-mode');
+  
+  document.querySelectorAll('#theme-toggle-btn, .mobile-theme-btn').forEach(btn => {
+    const sunIcon = btn.querySelector('.sun-icon');
+    const moonIcon = btn.querySelector('.moon-icon');
+    if (!sunIcon || !moonIcon) return;
+    
+    if (isLight) {
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+    } else {
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
+    }
+  });
 }
 
 

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Inject dynamic header & footer
   if (header) {
+    header.classList.add('subpage-header');
     header.innerHTML = `
       <div class="nav-container">
         <a href="../../index.html" class="logo">

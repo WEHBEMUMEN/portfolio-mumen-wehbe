@@ -126,6 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!imgCard.contains(img)) {
           imgCard.appendChild(img);
         }
+        img.onerror = () => {
+          imgCard.classList.add('no-image');
+          img.remove();
+        };
       } else {
         imgCard.classList.add('no-image');
         img.remove();

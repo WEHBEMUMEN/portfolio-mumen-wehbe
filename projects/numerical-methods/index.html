@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Structural Engineering | Mumen Wehbe</title>
+  <title>Digital Twin | Mumen Wehbe</title>
   <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../../styles.css">
   <style>
     .project-detail-container {
       max-width: 1000px;
@@ -172,15 +172,21 @@
   <!-- Header Section -->
   <header>
     <div class="nav-container">
-      <a href="../index.html" class="logo">
+      <a href="../../index.html" class="logo">
         Mumen Wehbe<span class="logo-dot"></span>
       </a>
       
       <nav class="nav-links">
-        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../../index.html" class="nav-link">Home</a>
       </nav>
       
       <div class="actions-container">
+        <!-- Theme Toggle Switch -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark/light mode" style="margin-right: 0.25rem;">
+          <i data-lucide="sun" class="sun-icon" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+          <i data-lucide="moon" class="moon-icon" style="width: 16px; height: 16px; stroke-width: 2; display: none;"></i>
+        </button>
+
         <button class="lang-btn" id="lang-switch-btn" aria-label="Toggle language">
           <i data-lucide="languages" style="width: 16px; height: 16px; stroke-width: 2;"></i>
           <span id="lang-switch-text">Français</span>
@@ -191,7 +197,7 @@
 
   <!-- Detailed Page Wrapper -->
   <main class="project-detail-container">
-    <a href="../index.html#projects" class="back-btn">
+    <a href="../../index.html#projects" class="back-btn">
       <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
       <span id="back-link-text">Back to Projects</span>
     </a>
@@ -229,7 +235,7 @@
         </div>
 
         <div class="action-row">
-          <a href="" target="_blank" class="btn btn-primary" id="project-cta-link"></a>
+          
         </div>
       </div>
     </div>
@@ -243,9 +249,9 @@
 
   <!-- Dynamic Content Controller -->
   <script type="module">
-    import { cvData } from '../cvData.js';
+    import { cvData } from '../../cvData.js';
 
-    const PROJECT_INDEX = 1; // Configured for Structural CNAM project
+    const PROJECT_INDEX = 5; // Configured for Digital Twin project
 
     let currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
@@ -288,23 +294,32 @@
       const img = document.getElementById('project-img');
       const imgCard = document.getElementById('project-img-card');
       if (project.image) {
-        img.src = `../${project.image}`;
+        img.src = `../../${project.image}`;
         img.alt = project.title;
       } else {
         imgCard.classList.add('no-image');
         img.remove();
       }
 
-      // Render CTA Link
-      const cta = document.getElementById('project-cta-link');
-      const href = project.pdfLink ? `../${project.pdfLink}` : project.link || '#';
-      cta.href = href;
+      // Render CTA Link(s)
+      const actionRow = document.querySelector('.action-row');
+      actionRow.innerHTML = '';
+      if (project.link) {
+        actionRow.innerHTML += `
+          <a href="${project.link}" target="_blank" class="btn btn-primary" id="project-cta-link" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+            <i data-lucide="external-link" style="width: 18px; height: 18px;"></i>
+            ${lang === 'en' ? 'View GitHub' : 'Voir sur GitHub'}
+          </a>
+        `;
+      }
       if (project.pdfLink) {
-        cta.target = '';
-        cta.innerHTML = `<i data-lucide="file-text" style="width: 18px; height: 18px;"></i> ${lang === 'en' ? 'Read Project Sheet' : 'Lire la Fiche Projet'}`;
-      } else {
-        cta.target = '_blank';
-        cta.innerHTML = `<i data-lucide="external-link" style="width: 18px; height: 18px;"></i> ${lang === 'en' ? 'View Live Project' : 'Voir le Projet'}`;
+        const btnClass = project.link ? 'btn-secondary' : 'btn-primary';
+        actionRow.innerHTML += `
+          <a href="../../${project.pdfLink}" class="btn ${btnClass}" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+            <i data-lucide="file-text" style="width: 18px; height: 18px;"></i>
+            ${lang === 'en' ? 'Read Project Sheet' : 'Lire la Fiche Projet'}
+          </a>
+        `;
       }
 
       // Render Lucide Icons
@@ -314,13 +329,39 @@
     }
 
     function getCategoryLabel(category, data) {
-      if (category === 'frontend') return data.projects.filterFrontend;
-      if (category === 'fullstack') return data.projects.filterFullstack;
-      if (category === 'academic') return data.projects.filterAcademic;
+      const primaryCat = Array.isArray(category) ? category[0] : category;
+      if (primaryCat === 'frontend') return data.projects.filterFrontend;
+      if (primaryCat === 'fullstack') return data.projects.filterFullstack;
+      if (primaryCat === 'academic') return data.projects.filterAcademic;
       return data.projects.filterAll;
     }
 
     // Set up Event Listeners
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('light-mode');
+        const isLight = document.documentElement.classList.contains('light-mode');
+        localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+        updateThemeIcons();
+      });
+    }
+
+    function updateThemeIcons() {
+      const sunIcon = document.querySelector('#theme-toggle-btn .sun-icon');
+      const moonIcon = document.querySelector('#theme-toggle-btn .moon-icon');
+      if (!sunIcon || !moonIcon) return;
+
+      if (document.documentElement.classList.contains('light-mode')) {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      } else {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      }
+    }
+    updateThemeIcons();
+
     const langBtn = document.getElementById('lang-switch-btn');
     langBtn.addEventListener('click', () => {
       currentLang = currentLang === 'en' ? 'fr' : 'en';

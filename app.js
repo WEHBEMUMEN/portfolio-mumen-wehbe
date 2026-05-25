@@ -110,6 +110,18 @@ function setupEventListeners() {
   });
 
   // Contact form submission removed in favor of direct email button
+  
+  // Theme Toggle Button click
+  const themeBtn = document.getElementById('theme-toggle-btn');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('light-mode');
+      const isLight = document.documentElement.classList.contains('light-mode');
+      localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+      updateThemeIcons();
+    });
+  }
+  updateThemeIcons();
 }
 
 // Setup Page Scroll Animations & Active Classes
@@ -373,13 +385,25 @@ function getCategoryIcon(key) {
 function getProjectDetailLink(title) {
   const normalized = title.toLowerCase();
   if (normalized.includes('twin') || normalized.includes('jumeau')) {
-    return 'projects/digital-twin.html';
-  }
-  if (normalized.includes('structural') || normalized.includes('structurelle') || normalized.includes('structurale')) {
-    return 'projects/structural-engineering.html';
+    return 'projects/digital-twin/index.html';
   }
   if (normalized.includes('vex') || normalized.includes('robotics') || normalized.includes('robotique')) {
-    return 'projects/vex-robotics.html';
+    return 'projects/vex-robotics/index.html';
+  }
+  if (normalized.includes('optimization') || normalized.includes('optimisation')) {
+    return 'projects/structural-optimization/index.html';
+  }
+  if (normalized.includes('fsi') || normalized.includes('interaction')) {
+    return 'projects/fsi-analysis/index.html';
+  }
+  if (normalized.includes('hydroelasticity') || normalized.includes('hydroé')) {
+    return 'projects/hydroelasticity/index.html';
+  }
+  if (normalized.includes('numerical') || normalized.includes('numérique')) {
+    return 'projects/numerical-methods/index.html';
+  }
+  if (normalized.includes('smart') || normalized.includes('intelligente')) {
+    return 'projects/smart-structures/index.html';
   }
   return '#';
 }
@@ -392,12 +416,22 @@ function renderProjectCards(projectsList, data) {
   }
   
   elements.projectsGrid.innerHTML = projectsList.map(project => {
-    // Check if project specifies custom link or PDF attachment
-    const href = project.pdfLink || project.link || '#';
-    const linkIcon = project.pdfLink 
-      ? '<i data-lucide="file-text" style="width: 16px; height: 16px; stroke-width: 2;"></i>' 
-      : '<i data-lucide="external-link" style="width: 16px; height: 16px; stroke-width: 2;"></i>';
-    const targetAttr = project.pdfLink ? '' : 'target="_blank"';
+    // Generate links HTML for dual resource links (GitHub + PDF)
+    let linksHtml = '';
+    if (project.link) {
+      linksHtml += `
+        <a href="${project.link}" target="_blank" class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
+          ${project.linkText || (currentLang === 'en' ? 'GitHub' : 'GitHub')} <i data-lucide="external-link" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+        </a>
+      `;
+    }
+    if (project.pdfLink) {
+      linksHtml += `
+        <a href="${project.pdfLink}" class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
+          ${currentLang === 'en' ? 'Project Sheet' : 'Fiche Projet'} <i data-lucide="file-text" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+        </a>
+      `;
+    }
     
     const imageTag = project.image 
       ? `<div class="project-image-wrapper">
@@ -413,9 +447,9 @@ function renderProjectCards(projectsList, data) {
             <div class="project-icon">
               <i data-lucide="${getProjectCategoryIcon(project.category)}" style="width: 24px; height: 24px; stroke-width: 2; color: var(--accent-cyan);"></i>
             </div>
-            <a href="${href}" ${targetAttr} class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
-              ${project.linkText || data.projects.linkText} ${linkIcon}
-            </a>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              ${linksHtml}
+            </div>
           </div>
           <h3 class="project-title">${project.title}</h3>
           <p class="project-description">${project.description}</p>
@@ -461,19 +495,24 @@ function filterProjects(category, data) {
   if (category === 'all') {
     renderProjectCards(allProjects, data);
   } else {
-    const filtered = allProjects.filter(p => p.category === category);
+    const filtered = allProjects.filter(p => 
+      Array.isArray(p.category) 
+        ? p.category.includes(category) 
+        : p.category === category
+    );
     renderProjectCards(filtered, data);
   }
 }
 
 // Icon helper for project cards
 function getProjectCategoryIcon(cat) {
+  const primaryCat = Array.isArray(cat) ? cat[0] : cat;
   const icons = {
     frontend: 'monitor',
     fullstack: 'layers',
     academic: 'graduation-cap'
   };
-  return icons[cat] || 'package';
+  return icons[primaryCat] || 'package';
 }
 
 // Open Project Modal
@@ -499,11 +538,25 @@ function openProjectModal(index) {
   const solutionTitle = currentLang === 'en' ? 'Solution & Achievements' : 'Solution & Réalisations';
   const closeBtnText = currentLang === 'en' ? 'Close Details' : 'Fermer';
 
-  const ctaBtnText = project.pdfLink 
-    ? (currentLang === 'en' ? 'Read Project Sheet' : 'Lire la Fiche Projet')
-    : (currentLang === 'en' ? 'View Live Project' : 'Voir le Projet');
-
-  const ctaIcon = project.pdfLink ? 'file-text' : 'external-link';
+  // Construct modal footer action links
+  let modalActionsHtml = '';
+  if (project.link) {
+    modalActionsHtml += `
+      <a href="${project.link}" target="_blank" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+        <i data-lucide="external-link" style="width: 16px; height: 16px;"></i>
+        ${currentLang === 'en' ? 'View GitHub' : 'Voir sur GitHub'}
+      </a>
+    `;
+  }
+  if (project.pdfLink) {
+    const btnClass = project.link ? 'btn-secondary' : 'btn-primary';
+    modalActionsHtml += `
+      <a href="${project.pdfLink}" class="${btnClass}" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+        <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
+        ${currentLang === 'en' ? 'Read Project Sheet' : 'Lire la Fiche Projet'}
+      </a>
+    `;
+  }
 
   elements.modalContent.innerHTML = `
     <div class="modal-split">
@@ -548,12 +601,9 @@ function openProjectModal(index) {
           </div>
         </div>
         
-        <div class="modal-footer-actions">
-          <a href="${href}" ${targetAttr} class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">
-            <i data-lucide="${ctaIcon}" style="width: 16px; height: 16px;"></i>
-            ${ctaBtnText}
-          </a>
-          <button class="btn btn-secondary close-modal-btn-action" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">
+        <div class="modal-footer-actions" style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          ${modalActionsHtml}
+          <button class="btn btn-secondary close-modal-btn-action" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; margin-left: auto;">
             ${closeBtnText}
           </button>
         </div>
@@ -585,10 +635,26 @@ function closeProjectModal() {
 
 // Category Label Helper
 function getProjectCategoryLabel(category, data) {
-  if (category === 'frontend') return data.projects.filterFrontend;
-  if (category === 'fullstack') return data.projects.filterFullstack;
-  if (category === 'academic') return data.projects.filterAcademic;
+  const primaryCat = Array.isArray(category) ? category[0] : category;
+  if (primaryCat === 'frontend') return data.projects.filterFrontend;
+  if (primaryCat === 'fullstack') return data.projects.filterFullstack;
+  if (primaryCat === 'academic') return data.projects.filterAcademic;
   return data.projects.filterAll;
+}
+
+// Update Theme Toggle Icons
+function updateThemeIcons() {
+  const sunIcon = document.querySelector('#theme-toggle-btn .sun-icon');
+  const moonIcon = document.querySelector('#theme-toggle-btn .moon-icon');
+  if (!sunIcon || !moonIcon) return;
+
+  if (document.documentElement.classList.contains('light-mode')) {
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+  } else {
+    sunIcon.style.display = 'block';
+    moonIcon.style.display = 'none';
+  }
 }
 
 

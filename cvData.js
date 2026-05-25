@@ -117,35 +117,21 @@ export const cvData = {
       filterAcademic: "Academic",
       list: [
         {
-          title: "CNAM interactive 3D Digital Twin",
-          category: "frontend",
-          description: "An interactive Digital Twin with Three.js involving real-time multiphysics simulation parameters and a custom real-time 2D IGA computational core written in native JavaScript.",
-          tags: ["Three.js", "Isogeometric Analysis", "Web 3D", "Solver Core"],
+          title: "CNAM Interactive 3D Digital Twin & Structural Mechanics",
+          category: ["frontend", "academic"],
+          description: "An interactive 3D Digital Twin with Three.js involving real-time multiphysics structural parameters, order reduction (ROM), and a custom real-time 2D IGA computational core written in native JavaScript.",
+          tags: ["Three.js", "Isogeometric Analysis", "Web 3D", "Solver Core", "Numerical Analysis", "Le CNAM"],
           image: "images/project-twin.png",
           link: "https://github.com/WEHBEMUMEN",
+          pdfLink: "pdfs/project-cnam.pdf",
           linkText: "View GitHub",
-          challenge: "Visualizing highly complex Isogeometric Analysis (IGA) simulation data involving high-dimensional physical variables in real-time. Traditional finite element (FEA) software requires massive computation time and lacks interactive web-based dashboarding for immediate structural feedback.",
-          solution: "Developed a mathematical order reduction framework (ECSW, DEIM, Gappy POD) and integrated it into a native, high-performance JS 2D computational core. Coupled this core with a fully interactive web 3D Three.js digital twin visualization, rendering stress color heatmaps in under 10 milliseconds directly inside the web browser.",
+          challenge: "Visualizing highly complex Isogeometric Analysis (IGA) simulation data involving high-dimensional physical variables in real-time. Traditional finite element (FEA) software requires massive computation time and lacks interactive web-based dashboarding for immediate structural feedback. Furthermore, validating structural mechanics outcomes under large displacement and nonlinear bending requires extremely precise and mathematical solver cores.",
+          solution: "Developed a mathematical order reduction framework (ECSW, DEIM, Gappy POD) and integrated it into a native, high-performance JS 2D computational core executing in under 10 ms. Coupled this core with a fully interactive web 3D Three.js digital twin visualization, rendering stress color heatmaps in real-time. Created an IGA solver validation suite comparing structural mechanics outcomes against traditional FEA results on reference stress benchmarks.",
           achievements: [
             "Designed and coded a native JS 2D IGA numerical solver executing in less than 10 ms (an 80x to 120x solver speedup).",
             "Created a sleek web-based 3D digital twin visualization using Three.js with real-time physical behavior displays.",
-            "Successfully calibrated and metrologically validated the solver on standard Kirsch reference stress benchmarks."
-          ]
-        },
-        {
-          title: "Structural CNAM Engineering Project",
-          category: "academic",
-          description: "Isogeometric Analysis (IGA) and Order Reduction project validating numerical simulation accuracy against standard stress test cases.",
-          tags: ["Le CNAM", "IGA", "Numerical Analysis"],
-          image: "images/project-structural.png",
-          pdfLink: "pdfs/project-cnam.pdf",
-          linkText: "Read Project Sheet",
-          challenge: "Validating structural mechanics simulations using advanced numerical methods like Isogeometric Analysis (IGA) and Order Reduction. Accurate finite element calculations under large displacement and nonlinear structural bending require extremely precise mathematical solver cores.",
-          solution: "Engineered an IGA solver validation suite comparing structural mechanics outcomes against traditional FEA results. Built custom mesh refinement modules and convergence stress heatmaps to verify solver correctness on reference structural mechanics test cases.",
-          achievements: [
             "Successfully validated stress results on standard Kirsch benchmarks with high convergence rates.",
-            "Developed order reduction mathematical cores to accelerate large displacement calculations.",
-            "Compiled a comprehensive academic report and technical project sheets outlining mathematical modeling."
+            "Developed order reduction mathematical cores to accelerate large displacement calculations and compiled detailed technical project sheets."
           ]
         },
         {
@@ -162,6 +148,81 @@ export const cvData = {
             "Led high school and university student teams to win 'Excellence' and 'Design' awards in VEX V5 competitions.",
             "Designed and implemented high-reliability PID path-planning and navigation controls in Python.",
             "Designed advanced mechatronics and sensors integration curricula for training sessions."
+          ]
+        },
+        {
+          title: "Structural Design Optimization",
+          category: ["fullstack", "academic"],
+          description: "Finite element analysis (FEA) and structural optimization of truss systems using custom Python solver libraries and numerical solvers.",
+          tags: ["FEA", "Optimization", "Python", "Truss Systems", "Numerical Methods"],
+          pdfLink: "projects/structural-optimization/structural-optimization-report.pdf",
+          linkText: "Read Project Sheet",
+          challenge: "Designing lightweight structural truss systems that safely support force loads while minimizing total volume/weight and ensuring stress/displacement bounds are not exceeded.",
+          solution: "Developed custom finite element analysis libraries in Python (libTruss) and applied mathematical programming solvers (SLSQP, COBYLA, COBYQA) to perform size and coordinate optimization on structural truss systems.",
+          achievements: [
+            "Engineered a Python-based finite element solver module (libTruss) for static structural analysis.",
+            "Implemented size and layout optimization routines yielding significant mass reduction on multi-bar trusses.",
+            "Conducted comparative studies of gradient-based and derivative-free optimizer convergence rates."
+          ]
+        },
+        {
+          title: "Fluid-Structure Interaction Analysis",
+          category: ["fullstack", "academic"],
+          description: "Numerical simulation and MATLAB modeling of fluid-structure interaction to evaluate aerostructural stability under aerodynamic loads.",
+          tags: ["FSI", "Aerodynamics", "MATLAB", "Finite Elements", "Dynamic Systems"],
+          pdfLink: "projects/fsi-analysis/fsi-analysis-report.pdf",
+          linkText: "Read Project Sheet",
+          challenge: "Predicting the coupled physical response of structures interacting with dynamic fluid domains where fluid pressure induces structural deformation and deformation alters the fluid flow.",
+          solution: "Constructed a coupled FSI solver algorithm in MATLAB, modeling structural bending under pressure profiles and iteratively converging aerodynamic forces and finite element displacement.",
+          achievements: [
+            "Developed a robust MATLAB computational routine for iteratively resolving fluid-structure equations.",
+            "Simulated aeroelastic stability boundaries to identify aerodynamic divergence thresholds.",
+            "Successfully validated convergence behavior of nested fluid-mesh deformation loops on test wing/beam profiles."
+          ]
+        },
+        {
+          title: "Hydroelasticity & Structural Waves",
+          category: ["fullstack", "academic"],
+          description: "Investigation of structural responses of floating bodies under wave excitations and hydroelastic load modeling.",
+          tags: ["Hydroelasticity", "Wave Mechanics", "Naval Engineering", "Finite Elements", "MATLAB"],
+          pdfLink: "projects/hydroelasticity/project-4-report.pdf",
+          linkText: "Read Project Sheet",
+          challenge: "Calculating structural bending, shear loads, and vibration modes of structures floating in fluid domains under variable wave frequency excitation.",
+          solution: "Engineered hydroelastic response models utilizing finite element discretization combined with potential flow theory to evaluate structural wave-induced stress.",
+          achievements: [
+            "Formulated rigid and elastic mode equations for floating structures subjected to regular wave spectra.",
+            "Analyzed peak bending moments and structural shear forces to prevent structural hull failure under hydrodynamic loads.",
+            "Presented detailed hydroelastic response curves comparing analytical boundary conditions with finite element models."
+          ]
+        },
+        {
+          title: "Advanced Numerical Methods & Solver Verification",
+          category: ["frontend", "academic"],
+          description: "Implementation and error convergence validation of high-order numerical schemes and custom finite element solver verification.",
+          tags: ["MATLAB", "Numerical Schemes", "Finite Elements", "Validation", "Error Convergence"],
+          pdfLink: "projects/numerical-methods/numerical-methods-report.pdf",
+          linkText: "Read Project Sheet",
+          challenge: "Ensuring numerical correctness and high-order error convergence rates in custom finite element solver codes compared to analytical solutions.",
+          solution: "Built a MATLAB solver verification suite validating grid convergence rates (L2-error norms) on physical benchmark test cases.",
+          achievements: [
+            "Programmed custom high-order numerical discretization schemes and linear solvers in MATLAB.",
+            "Verified solver accuracy by tracking asymptotic convergence rates matching theoretical rates.",
+            "Documented rigorous verification test tables validating spatial and temporal mesh refinement limits."
+          ]
+        },
+        {
+          title: "Smart Structures & Metrological Calibration",
+          category: ["fullstack", "academic"],
+          description: "Experimental testing and metrological calibration of piezoelectric sensors and smart structural materials in laboratory environments.",
+          tags: ["Smart Structures", "Sensors", "Calibration", "Metrology", "Signal Processing", "Lab Testing"],
+          pdfLink: "projects/smart-structures/smart-structures-report.pdf",
+          linkText: "Read Project Sheet",
+          challenge: "Calibrating active smart material structures and filtering physical noise to retrieve clean strain/vibration readings under dynamic loads.",
+          solution: "Conducted laboratory dynamic stress sweeps and engineered metrological filtering routines in MATLAB to calibrate sensor gains and piezoelectric coefficients.",
+          achievements: [
+            "Calibrated piezoelectric sensor grids under varying load frequencies and acceleration sweeps.",
+            "Developed signal processing scripts to isolate structural vibration modes from experimental ambient noise.",
+            "Compiled detailed metrological calibration logs verifying sensor sensitivity linearity bounds."
           ]
         }
       ]
@@ -296,35 +357,21 @@ export const cvData = {
       filterAcademic: "Académique",
       list: [
         {
-          title: "Jumeau Numérique 3D Interactif CNAM",
-          category: "frontend",
-          description: "Développement d'un jumeau numérique 3D complet avec Three.js embarquant des variables multiphysiques interactives et un noyau de calcul IGA 2D temps réel codé en JS natif.",
-          tags: ["Three.js", "Analyse Isogéométrique", "Web 3D", "Noyau de calcul"],
+          title: "Jumeau Numérique 3D Interactif CNAM & Mécanique des Structures",
+          category: ["frontend", "academic"],
+          description: "Développement d'un jumeau numérique 3D complet avec Three.js embarquant des variables multiphysiques interactives, de la réduction d'ordre (ROM) et un noyau de calcul IGA 2D temps réel codé en JS natif.",
+          tags: ["Three.js", "Analyse Isogéométrique", "Web 3D", "Noyau de calcul", "Analyse Numérique", "Le CNAM"],
           image: "images/project-twin.png",
           link: "https://github.com/WEHBEMUMEN",
+          pdfLink: "pdfs/project-cnam.pdf",
           linkText: "Voir sur GitHub",
-          challenge: "Visualiser des données complexes de simulation par Analyse Isogéométrique (IGA) impliquant des variables physiques multidimensionnelles en temps réel. Les outils FEA traditionnels nécessitent des temps de calcul élevés et manquent d'interactivité web pour un retour d'information immédiat.",
-          solution: "Développement d'un cadre d'hyper-réduction mathématique (ECSW, DEIM, Gappy POD) intégré à un noyau de calcul IGA 2D haute performance codé en JS natif. Interfaçage avec un Jumeau Numérique 3D web interactif en Three.js résolvant les champs de contraintes en moins de 10 ms directement dans le navigateur.",
+          challenge: "Visualiser des données complexes de simulation par Analyse Isogéométrique (IGA) impliquant des variables physiques multidimensionnelles en temps réel. Les outils FEA traditionnels nécessitent des temps de calcul élevés et manquent d'interactivité web. De plus, l'évaluation précise de grandes déformations non linéaires nécessite des solveurs mathématiques extrêmement rigoureux.",
+          solution: "Développement d'un cadre d'hyper-réduction mathématique (ECSW, DEIM, Gappy POD) intégré à un noyau de calcul IGA 2D haute performance codé en JS natif (résolution < 10 ms). Interfaçage avec un Jumeau Numérique 3D web interactif en Three.js résolvant les champs de contraintes en temps réel, et validation de la modélisation vis-à-vis des cas tests de contraintes Kirsch.",
           achievements: [
             "Conception et codage d'un noyau de calcul IGA 2D natif s'exécutant en moins de 10 ms (accélération de 80x à 120x).",
             "Création d'une interface 3D Three.js haut de gamme gérant des affichages physiques interactifs temps réel.",
-            "Validation métrologique et convergence du solveur sur cas tests de référence (plaque trouée de Kirsch)."
-          ]
-        },
-        {
-          title: "Projet d'Ingénierie Structurale CNAM",
-          category: "academic",
-          description: "Projet de modélisation numérique IGA et réduction d'ordre de structure pour la validation de précision vis-à-vis des cas tests de contraintesKirsch.",
-          tags: ["Le CNAM", "IGA", "Analyse Numérique"],
-          image: "images/project-structural.png",
-          pdfLink: "pdfs/project-cnam.pdf",
-          linkText: "Lire la Fiche Projet",
-          challenge: "Valider la précision des méthodes de simulation mécanique avancées comme l'IGA et la réduction d'ordre. L'évaluation précise de grandes déformations tridimensionnelles non linéaires nécessite des solveurs mathématiques extrêmement rigoureux.",
-          solution: "Mise en place d'une suite académique de validation comparant les résultats IGA aux logiciels FEA de référence. Développement de modules de maillage raffiné et d'analyse de contraintes pour valider la robustesse de la modélisation sur cas de référence.",
-          achievements: [
             "Validation rigoureuse des concentrations de contraintes Kirsch avec d'excellents taux de convergence.",
-            "Élaboration d'algorithmes mathématiques de réduction d'ordre pour accélérer les calculs de flexion non linéaire.",
-            "Rédaction de rapports de modélisation mécanique et fiches projets CNAM."
+            "Élaboration d'algorithmes mathématiques de réduction d'ordre pour accélérer les calculs de flexion non linéaire et rédaction de fiches projets."
           ]
         },
         {
@@ -341,6 +388,81 @@ export const cvData = {
             "Encadrement d'équipes ayant remporté de prestigieux prix d'excellence et de design en compétition VEX V5.",
             "Développement de scripts d'asservissement PID et de trajectoires en Python de haute précision.",
             "Création de supports de cours en mécatronique, électronique et intégration de capteurs."
+          ]
+        },
+        {
+          title: "Optimisation de Conception Structurale",
+          category: ["fullstack", "academic"],
+          description: "Analyse par éléments finis (FEA) et optimisation structurale de systèmes de treillis à l'aide de bibliothèques personnalisées en Python et de solveurs mathématiques.",
+          tags: ["FEA", "Optimisation", "Python", "Systèmes Treillis", "Méthodes Numériques"],
+          pdfLink: "projects/structural-optimization/structural-optimization-report.pdf",
+          linkText: "Lire la Fiche Projet",
+          challenge: "Concevoir des systèmes de treillis structuraux légers supportant des charges élevées tout en minimisant le volume/poids total et en respectant les limites de contrainte et déplacement.",
+          solution: "Développement de bibliothèques d'analyse par éléments finis en Python (libTruss) et application de solveurs d'optimisation (SLSQP, COBYLA, COBYQA) pour optimiser les dimensions et la géométrie des treillis.",
+          achievements: [
+            "Conception d'un solveur par éléments finis en Python (libTruss) pour l'analyse structurale statique.",
+            "Implémentation d'algorithmes d'optimisation dimensionnelle et géométrique apportant des réductions de masse significatives.",
+            "Étude comparative des taux de convergence d'optimiseurs avec et sans gradient."
+          ]
+        },
+        {
+          title: "Analyse d'Interaction Fluide-Structure",
+          category: ["fullstack", "academic"],
+          description: "Simulation numérique et modélisation MATLAB de l'interaction fluide-structure pour évaluer la stabilité aérostructurale sous charges aérodynamiques.",
+          tags: ["IFS", "Aérodynamique", "MATLAB", "Éléments Finis", "Systèmes Dynamiques"],
+          pdfLink: "projects/fsi-analysis/fsi-analysis-report.pdf",
+          linkText: "Lire la Fiche Projet",
+          challenge: "Prédire la réponse physique couplée de structures interagissant avec des domaines fluides dynamiques, où la pression du fluide induit des déformations qui modifient l'écoulement.",
+          solution: "Création d'un algorithme de résolution couplée IFS sous MATLAB, modélisant la flexion structurale sous profils de pression et convergeant itérativement les forces aérodynamiques et les déplacements.",
+          achievements: [
+            "Développement d'une routine de calcul MATLAB robuste pour résoudre itérativement les équations fluide-structure.",
+            "Simulation des limites de stabilité aéroélastique pour identifier les seuils de divergence aérodynamique.",
+            "Validation du comportement de convergence des boucles de déformation de maillage sur profils de poutre et d'aile."
+          ]
+        },
+        {
+          title: "Hydroélasticité & Ondes Structurales",
+          category: ["fullstack", "academic"],
+          description: "Étude des réponses structurales de corps flottants soumis à des excitations de vagues et modélisation des charges hydroélastiques.",
+          tags: ["Hydroelasticity", "Mécanique des Vagues", "Génie Naval", "Éléments Finis", "MATLAB"],
+          pdfLink: "projects/hydroelasticity/project-4-report.pdf",
+          linkText: "Lire la Fiche Projet",
+          challenge: "Calculer la flexion, les efforts tranchants et les modes vibratoires de structures flottantes soumises à des excitations de vagues à fréquences variables.",
+          solution: "Modélisation de la réponse hydroélastique combinant la discrétisation par éléments finis et la théorie des écoulements potentiels pour évaluer les contraintes induites par la houle.",
+          achievements: [
+            "Formulation d'équations de modes rigides et élastiques pour des structures flottantes soumises à des spectres de vagues régulières.",
+            "Analyse des moments fléchissants et efforts tranchants maximaux pour prévenir les défaillances de coque sous charges hydrodynamiques.",
+            "Présentation de courbes de réponse hydroélastique comparant les conditions limites analytiques aux modèles éléments finis."
+          ]
+        },
+        {
+          title: "Méthodes Numériques Avancées & Vérification",
+          category: ["frontend", "academic"],
+          description: "Implémentation et validation rigoureuse de la convergence d'erreur de schémas numériques d'ordre élevé et vérification de solveurs éléments finis.",
+          tags: ["MATLAB", "Schémas Numériques", "Éléments Finis", "Validation", "Convergence d'Erreur"],
+          pdfLink: "projects/numerical-methods/numerical-methods-report.pdf",
+          linkText: "Lire la Fiche Projet",
+          challenge: "Garantir l'exactitude numérique et des taux de convergence d'erreur d'ordre élevé dans les solveurs par éléments finis personnalisés par rapport aux solutions analytiques.",
+          solution: "Développement sous MATLAB d'une suite de vérification évaluant les taux de convergence de grille (normes d'erreur L2) sur des cas de référence physiques.",
+          achievements: [
+            "Programmation de schémas de discrétisation numérique d'ordre élevé et de solveurs de systèmes linéaires sous MATLAB.",
+            "Vérification de la précision du solveur en suivant les taux de convergence asymptotique théoriques.",
+            "Documentation de tableaux de tests de vérification rigoureux évaluant les limites de raffinement de maillage spatial et temporel."
+          ]
+        },
+        {
+          title: "Structures Intelligentes & Calibrage Métrologique",
+          category: ["fullstack", "academic"],
+          description: "Essais expérimentaux et étalonnage métrologique de capteurs piézoélectriques et de matériaux intelligents en laboratoire.",
+          tags: ["Structures Intelligentes", "Capteurs", "Étalonnage", "Métrologie", "Traitement du Signal", "Essais Labo"],
+          pdfLink: "projects/smart-structures/smart-structures-report.pdf",
+          linkText: "Lire la Fiche Projet",
+          challenge: "Étalonner des structures de matériaux intelligents actifs et filtrer le bruit physique pour acquérir des mesures propres de déformation et vibration sous charges dynamiques.",
+          solution: "Réalisation de balayages de contraintes dynamiques en laboratoire et conception d'algorithmes de filtrage sous MATLAB pour calibrer les gains et coefficients piézoélectriques des capteurs.",
+          achievements: [
+            "Étalonnage de grilles de capteurs piézoélectriques sous diverses fréquences de charge et balayages d'accélération.",
+            "Développement de scripts de traitement du signal pour isoler les modes vibratoires structuraux du bruit expérimental ambiant.",
+            "Compilation de journaux d'étalonnage métrologique détaillés validant les limites de linéarité de sensibilité des capteurs."
           ]
         }
       ]

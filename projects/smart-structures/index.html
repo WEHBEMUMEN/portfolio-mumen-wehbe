@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Twin | Mumen Wehbe</title>
+  <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    .project-detail-container {
+      max-width: 1000px;
+      margin: 8rem auto 4rem;
+      padding: 0 2rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 2rem;
+      transition: var(--transition-smooth);
+    }
+    .back-btn:hover {
+      color: var(--text-primary);
+      transform: translateX(-4px);
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .detail-image-card {
+      position: relative;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      height: 350px;
+      background: var(--bg-secondary);
+    }
+    .detail-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .detail-image-card.no-image {
+      background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.12) 0%, rgba(10, 15, 29, 0.7) 100%);
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      background-size: 15px 15px;
+    }
+    .detail-image-card.no-image::before {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border: 1px dashed rgba(6, 182, 212, 0.25);
+      border-radius: 50%;
+      top: calc(50% - 80px);
+      left: calc(50% - 80px);
+      animation: rotateSlow 20s linear infinite;
+    }
+    .specs-card {
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.015);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.75rem;
+    }
+    .specs-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .specs-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .specs-tag {
+      font-size: 0.8rem;
+      background: rgba(6, 182, 212, 0.06);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(6, 182, 212, 0.15);
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .content-pane {
+      display: flex;
+      flex-direction: column;
+    }
+    .proj-category {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+    .proj-title {
+      font-size: 2.75rem;
+      line-height: 1.2;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+    .info-section {
+      margin-bottom: 2.5rem;
+    }
+    .info-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .info-text {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+    .achievements-list {
+      list-style: none;
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .achievements-list li {
+      font-size: 1.025rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .arrow-icon {
+      color: var(--accent-emerald);
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+    .action-row {
+      display: flex;
+      gap: 1.25rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+    @media (max-width: 900px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .detail-image-card {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient background glow blobs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="nav-container">
+      <a href="../../index.html" class="logo">
+        Mumen Wehbe<span class="logo-dot"></span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../../index.html" class="nav-link">Home</a>
+      </nav>
+      
+      <div class="actions-container">
+        <!-- Theme Toggle Switch -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark/light mode" style="margin-right: 0.25rem;">
+          <i data-lucide="sun" class="sun-icon" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+          <i data-lucide="moon" class="moon-icon" style="width: 16px; height: 16px; stroke-width: 2; display: none;"></i>
+        </button>
+
+        <button class="lang-btn" id="lang-switch-btn" aria-label="Toggle language">
+          <i data-lucide="languages" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+          <span id="lang-switch-text">Français</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Detailed Page Wrapper -->
+  <main class="project-detail-container">
+    <a href="../../index.html#projects" class="back-btn">
+      <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+      <span id="back-link-text">Back to Projects</span>
+    </a>
+
+    <div class="detail-grid">
+      <div class="visual-pane">
+        <div class="detail-image-card" id="project-img-card">
+          <img src="" alt="" onerror="this.parentElement.classList.add('no-image'); this.remove();" class="detail-image" id="project-img" />
+        </div>
+        <div class="specs-card">
+          <h4 class="specs-title" id="specs-title-text">System Specs</h4>
+          <div class="specs-tags" id="specs-tags-container"></div>
+        </div>
+      </div>
+
+      <div class="content-pane">
+        <span class="proj-category" id="project-cat"></span>
+        <h1 class="proj-title" id="project-title-text"></h1>
+
+        <div class="info-section">
+          <h2 class="info-title" id="challenge-title">
+            <i data-lucide="alert-circle" style="width: 20px; height: 20px; color: var(--accent-cyan);"></i>
+            The Challenge
+          </h2>
+          <p class="info-text" id="challenge-text"></p>
+        </div>
+
+        <div class="info-section">
+          <h2 class="info-title" id="solution-title">
+            <i data-lucide="check-circle" style="width: 20px; height: 20px; color: var(--accent-emerald);"></i>
+            Solution & Achievements
+          </h2>
+          <p class="info-text" id="solution-text"></p>
+          <ul class="achievements-list" id="achievements-container"></ul>
+        </div>
+
+        <div class="action-row">
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">Mumen Wehbe<span class="logo-dot"></span></div>
+    <div id="footer-copy-text">&copy; 2026 Mumen Wehbe. All rights reserved.</div>
+  </footer>
+
+  <!-- Dynamic Content Controller -->
+  <script type="module">
+    import { cvData } from '../../cvData.js';
+
+    const PROJECT_INDEX = 6; // Configured for Digital Twin project
+
+    let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+
+    function renderPage(lang) {
+      const data = cvData[lang];
+      const project = data.projects.list[PROJECT_INDEX];
+
+      document.title = `${project.title} | Mumen Wehbe`;
+      
+      // Update UI Text elements
+      document.getElementById('back-link-text').textContent = lang === 'en' ? 'Back to Projects' : 'Retour aux Projets';
+      document.getElementById('lang-switch-text').textContent = lang === 'en' ? 'Français' : 'English';
+      
+      document.getElementById('specs-title-text').textContent = lang === 'en' ? 'System Specs' : 'Spécifications';
+      document.getElementById('challenge-title').innerHTML = `<i data-lucide="alert-circle" style="width: 20px; height: 20px; color: var(--accent-cyan); flex-shrink: 0;"></i> ${lang === 'en' ? 'The Challenge' : 'Le Défi'}`;
+      document.getElementById('solution-title').innerHTML = `<i data-lucide="check-circle" style="width: 20px; height: 20px; color: var(--accent-emerald); flex-shrink: 0;"></i> ${lang === 'en' ? 'Solution & Achievements' : 'Solution & Réalisations'}`;
+      
+      document.getElementById('footer-copy-text').innerHTML = `&copy; ${new Date().getFullYear()} Mumen Wehbe. ${lang === 'en' ? 'All rights reserved.' : 'Tous droits réservés.'}`;
+
+      // Update Project elements
+      document.getElementById('project-cat').textContent = getCategoryLabel(project.category, data);
+      document.getElementById('project-title-text').textContent = project.title;
+      document.getElementById('challenge-text').textContent = project.challenge || project.description;
+      document.getElementById('solution-text').textContent = project.solution || '';
+
+      // Render Achievements
+      const achievementsContainer = document.getElementById('achievements-container');
+      achievementsContainer.innerHTML = (project.achievements || []).map(ach => `
+        <li>
+          <i data-lucide="arrow-right" class="arrow-icon" style="width: 16px; height: 16px; color: var(--accent-emerald); flex-shrink: 0; margin-top: 4px;"></i>
+          <span>${ach}</span>
+        </li>
+      `).join('');
+
+      // Render System tags
+      const tagsContainer = document.getElementById('specs-tags-container');
+      tagsContainer.innerHTML = project.tags.map(t => `<span class="specs-tag">${t}</span>`).join('');
+
+      // Render image card settings
+      const img = document.getElementById('project-img');
+      const imgCard = document.getElementById('project-img-card');
+      if (project.image) {
+        img.src = `../../${project.image}`;
+        img.alt = project.title;
+      } else {
+        imgCard.classList.add('no-image');
+        img.remove();
+      }
+
+      // Render CTA Link(s)
+      const actionRow = document.querySelector('.action-row');
+      actionRow.innerHTML = '';
+      if (project.link) {
+        actionRow.innerHTML += `
+          <a href="${project.link}" target="_blank" class="btn btn-primary" id="project-cta-link" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+            <i data-lucide="external-link" style="width: 18px; height: 18px;"></i>
+            ${lang === 'en' ? 'View GitHub' : 'Voir sur GitHub'}
+          </a>
+        `;
+      }
+      if (project.pdfLink) {
+        const btnClass = project.link ? 'btn-secondary' : 'btn-primary';
+        actionRow.innerHTML += `
+          <a href="../../${project.pdfLink}" class="btn ${btnClass}" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+            <i data-lucide="file-text" style="width: 18px; height: 18px;"></i>
+            ${lang === 'en' ? 'Read Project Sheet' : 'Lire la Fiche Projet'}
+          </a>
+        `;
+      }
+
+      // Render Lucide Icons
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+    }
+
+    function getCategoryLabel(category, data) {
+      const primaryCat = Array.isArray(category) ? category[0] : category;
+      if (primaryCat === 'frontend') return data.projects.filterFrontend;
+      if (primaryCat === 'fullstack') return data.projects.filterFullstack;
+      if (primaryCat === 'academic') return data.projects.filterAcademic;
+      return data.projects.filterAll;
+    }
+
+    // Set up Event Listeners
+    const themeBtn = document.getElementById('theme-toggle-btn');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('light-mode');
+        const isLight = document.documentElement.classList.contains('light-mode');
+        localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+        updateThemeIcons();
+      });
+    }
+
+    function updateThemeIcons() {
+      const sunIcon = document.querySelector('#theme-toggle-btn .sun-icon');
+      const moonIcon = document.querySelector('#theme-toggle-btn .moon-icon');
+      if (!sunIcon || !moonIcon) return;
+
+      if (document.documentElement.classList.contains('light-mode')) {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      } else {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      }
+    }
+    updateThemeIcons();
+
+    const langBtn = document.getElementById('lang-switch-btn');
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'fr' : 'en';
+      localStorage.setItem('portfolio-lang', currentLang);
+      renderPage(currentLang);
+    });
+
+    // Initial render
+    renderPage(currentLang);
+  </script>
+</body>
+</html>

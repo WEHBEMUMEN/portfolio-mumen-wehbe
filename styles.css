@@ -32,6 +32,115 @@
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Light Mode Theme Overrides */
+:root.light-mode {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.8);
+  --border-color: rgba(15, 23, 42, 0.08);
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+}
+
+:root.light-mode body {
+  background-color: var(--bg-primary);
+  background-image: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+}
+
+:root.light-mode header {
+  background: rgba(248, 250, 252, 0.75);
+}
+
+:root.light-mode .header-scrolled {
+  background: rgba(248, 250, 252, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05);
+}
+
+:root.light-mode .btn-secondary {
+  background: rgba(15, 23, 42, 0.03);
+  color: var(--text-primary);
+}
+
+:root.light-mode .btn-secondary:hover {
+  background: rgba(15, 23, 42, 0.07);
+}
+
+:root.light-mode .timeline-content {
+  box-shadow: 0 5px 25px rgba(15, 23, 42, 0.03);
+}
+
+:root.light-mode .timeline-dot {
+  background: var(--bg-primary);
+}
+
+:root.light-mode .theme-toggle-btn {
+  background: rgba(15, 23, 42, 0.04);
+  color: var(--text-primary);
+}
+
+:root.light-mode .theme-toggle-btn:hover {
+  background: rgba(15, 23, 42, 0.08);
+}
+
+:root.light-mode .modal {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+:root.light-mode .modal-content {
+  background: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+:root.light-mode .modal-scroll-area::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+:root.light-mode .modal-scroll-area::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+:root.light-mode .modal-tag {
+  background: rgba(6, 182, 212, 0.06);
+  border-color: rgba(6, 182, 212, 0.15);
+}
+
+:root.light-mode .floating-badge {
+  background: rgba(248, 250, 252, 0.85);
+  color: var(--text-primary);
+}
+
+/* Theme Toggle Button Styling */
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.2);
+  transform: rotate(15deg);
+}
+
+.theme-toggle-btn i {
+  flex-shrink: 0;
+  transition: var(--transition-smooth);
+}
+
 /* Reset and Globals */
 *, ::before, ::after {
   box-sizing: border-box;
@@ -143,6 +252,7 @@ header {
   font-family: var(--font-heading);
   background: var(--gradient-neon);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   display: flex;
   align-items: center;
@@ -380,6 +490,7 @@ section {
   font-size: 2.25rem;
   background: var(--gradient-indigo-cyan);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1.5rem;
   font-weight: 700;
@@ -627,6 +738,7 @@ section {
   font-family: var(--font-heading);
   background: var(--gradient-neon);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.25rem;
 }

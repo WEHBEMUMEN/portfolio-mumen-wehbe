@@ -1301,18 +1301,23 @@ footer {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 100%; /* Dynamic full-screen width */
     height: 100dvh; /* Dynamic viewport height to account for mobile toolbars */
     background: var(--bg-secondary);
-    border-left: 1px solid var(--border-color);
+    border-left: none; /* No border needed for fullscreen overlay */
     flex-direction: column;
-    padding: 5rem 1.75rem 1.5rem; /* Reduced top padding to prevent vertical overflow */
-    align-items: flex-start;
+    padding: 7rem 2rem 4rem; /* Balanced spacing for fullscreen layout */
+    align-items: center; /* Center links for a premium layout */
     justify-content: flex-start;
-    gap: 1.25rem; /* Tighter gap between links on mobile */
+    gap: 1.5rem;
     transition: var(--transition-smooth);
     z-index: 99;
     overflow-y: auto; /* Allow scrolling if screen is extremely short */
+  }
+
+  .nav-links .nav-link {
+    font-size: 1.25rem; /* Larger font size for better tap target on mobile */
+    font-weight: 600;
   }
   
   .nav-links.open {
@@ -1322,12 +1327,13 @@ footer {
   .mobile-nav-actions {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center; /* Center actions row horizontally */
     gap: 0.75rem;
     margin-top: auto; /* Push actions to the bottom of the drawer container */
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     width: 100%;
+    max-width: 320px; /* Constrain actions width to keep it neat */
     flex-shrink: 0; /* Prevent the actions container from shrinking */
   }
 
@@ -1361,7 +1367,7 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    margin-left: auto;
+    margin-left: auto; /* Sit neatly in flex row */
     background: var(--gradient-neon);
     color: var(--bg-primary);
     font-weight: 600;

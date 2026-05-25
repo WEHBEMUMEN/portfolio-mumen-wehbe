@@ -1302,16 +1302,17 @@ footer {
     top: 0;
     right: -100%;
     width: 280px;
-    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height to account for mobile toolbars */
     background: var(--bg-secondary);
     border-left: 1px solid var(--border-color);
     flex-direction: column;
-    padding: 8rem 2rem 2rem;
+    padding: 5rem 1.75rem 1.5rem; /* Reduced top padding to prevent vertical overflow */
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 2rem;
+    gap: 1.25rem; /* Tighter gap between links on mobile */
     transition: var(--transition-smooth);
     z-index: 99;
+    overflow-y: auto; /* Allow scrolling if screen is extremely short */
   }
   
   .nav-links.open {
@@ -1323,10 +1324,11 @@ footer {
     align-items: center;
     justify-content: flex-start;
     gap: 0.75rem;
-    margin-top: auto; /* Push to the bottom of the drawer */
+    margin-top: auto; /* Push actions to the bottom of the drawer container */
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     width: 100%;
+    flex-shrink: 0; /* Prevent the actions container from shrinking */
   }
 
   .mobile-nav-actions .theme-toggle-btn,
@@ -1341,6 +1343,7 @@ footer {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
     color: var(--text-primary);
+    flex-shrink: 0;
   }
 
   .mobile-nav-actions .lang-btn {
@@ -1362,6 +1365,8 @@ footer {
     background: var(--gradient-neon);
     color: var(--bg-primary);
     font-weight: 600;
+    flex-shrink: 0; /* Prevent button from squishing on small widths */
+    white-space: nowrap; /* Prevent button text from wrapping */
   }
 }
 

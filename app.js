@@ -1,7 +1,10 @@
 import { cvData } from './cvData.js';
 
-// Application State
-let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+const getBrowserLang = () => {
+  const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  return lang.startsWith('fr') ? 'fr' : 'en';
+};
+let currentLang = localStorage.getItem('portfolio-lang') || getBrowserLang();
 let activeProjectIndex = null;
 
 // DOM Elements Cache

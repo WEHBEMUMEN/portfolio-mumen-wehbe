@@ -2,7 +2,12 @@ import { cvData } from '../cvData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const PROJECT_INDEX = parseInt(document.body.dataset.projectIndex || '0', 10);
-  let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+  
+  const getBrowserLang = () => {
+    const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    return lang.startsWith('fr') ? 'fr' : 'en';
+  };
+  let currentLang = localStorage.getItem('portfolio-lang') || getBrowserLang();
 
   const header = document.querySelector('header');
   const footer = document.querySelector('footer');

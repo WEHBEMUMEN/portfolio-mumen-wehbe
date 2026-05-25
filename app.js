@@ -543,7 +543,7 @@ function openProjectModal(index) {
   if (project.link) {
     modalActionsHtml += `
       <a href="${project.link}" target="_blank" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-        <i data-lucide="external-link" style="width: 16px; height: 16px;"></i>
+        <i data-lucide="github" style="width: 16px; height: 16px;"></i>
         ${currentLang === 'en' ? 'View GitHub' : 'Voir sur GitHub'}
       </a>
     `;

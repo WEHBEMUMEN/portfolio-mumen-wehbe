@@ -1913,5 +1913,10 @@ body.modal-open {
   .timeline-role {
     font-size: 1.15rem;
   }
+
+  /* Reduce card padding on mobile to optimize text layout */
+  .project-card-body {
+    padding: 1.25rem;
+  }
 }
 

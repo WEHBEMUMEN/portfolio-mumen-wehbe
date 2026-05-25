@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (project.link) {
         actionRow.innerHTML += `
           <a href="${project.link}" target="_blank" class="btn btn-primary" id="project-cta-link" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-            <i data-lucide="external-link" style="width: 18px; height: 18px;"></i>
+            <i data-lucide="github" style="width: 18px; height: 18px;"></i>
             ${lang === 'en' ? 'View GitHub' : 'Voir sur GitHub'}
           </a>
         `;

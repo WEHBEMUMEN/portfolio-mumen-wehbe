@@ -151,6 +151,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -160,6 +162,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
   position: relative;
 }
 
@@ -1831,6 +1834,10 @@ body.modal-open {
 
 /* Mobile Navigation & Responsive Overrides for Project Subpages */
 @media (max-width: 768px) {
+  .nav-container {
+    padding: 1rem 1.25rem;
+  }
+
   .subpage-header .nav-links {
     position: static;
     width: auto;
@@ -1917,6 +1924,18 @@ body.modal-open {
   /* Reduce card padding on mobile to optimize text layout */
   .project-card-body {
     padding: 1.25rem;
+  }
+
+  /* Stack stats vertically on small screens */
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Downscale hero card sizes to prevent container pushing */
+  .hero-visual-card {
+    max-width: 280px;
+    height: 280px;
   }
 }
 

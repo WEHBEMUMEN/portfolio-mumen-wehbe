@@ -414,8 +414,14 @@ function getProjectDetailLink(title) {
   if (normalized.includes('optimization') || normalized.includes('optimisation')) {
     return 'projects/structural-optimization/index.html';
   }
+  if (normalized.includes('integrity') || normalized.includes('intégrité')) {
+    return 'projects/structural-integrity/index.html';
+  }
   if (normalized.includes('fsi') || normalized.includes('interaction')) {
     return 'projects/fsi-analysis/index.html';
+  }
+  if (normalized.includes('tank') || normalized.includes('réservoirs')) {
+    return 'projects/tank-hydroelasticity/index.html';
   }
   if (normalized.includes('hydroelasticity') || normalized.includes('hydroé')) {
     return 'projects/hydroelasticity/index.html';
@@ -437,7 +443,7 @@ function renderProjectCards(projectsList, data) {
   }
   
   elements.projectsGrid.innerHTML = projectsList.map(project => {
-    // Generate links HTML for dual resource links (GitHub + PDF)
+    // Generate links HTML for dual resource links (GitHub + Code + PDF)
     let linksHtml = '';
     if (project.link) {
       linksHtml += `
@@ -446,9 +452,22 @@ function renderProjectCards(projectsList, data) {
         </a>
       `;
     }
-    if (project.pdfLink) {
+    if (project.codeLink) {
       linksHtml += `
-        <a href="${project.pdfLink}" class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="${project.codeLink}" target="_blank" class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
+          ${currentLang === 'en' ? 'Code' : 'Code'} <i data-lucide="code" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+        </a>
+      `;
+    }
+    if (project.pdfs && project.pdfs.length > 0) {
+      linksHtml += `
+        <a href="${project.pdfs[0].path}" target="_blank" class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
+          ${currentLang === 'en' ? 'Project Sheet' : 'Fiche Projet'} <i data-lucide="file-text" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+        </a>
+      `;
+    } else if (project.pdfLink) {
+      linksHtml += `
+        <a href="${project.pdfLink}" target="_blank" class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
           ${currentLang === 'en' ? 'Project Sheet' : 'Fiche Projet'} <i data-lucide="file-text" style="width: 16px; height: 16px; stroke-width: 2;"></i>
         </a>
       `;
@@ -569,10 +588,31 @@ function openProjectModal(index) {
       </a>
     `;
   }
-  if (project.pdfLink) {
+  if (project.codeLink) {
     const btnClass = project.link ? 'btn-secondary' : 'btn-primary';
     modalActionsHtml += `
-      <a href="${project.pdfLink}" class="${btnClass}" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+      <a href="${project.codeLink}" target="_blank" class="btn ${btnClass}" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+        <i data-lucide="code" style="width: 16px; height: 16px;"></i>
+        ${currentLang === 'en' ? 'View Code' : 'Voir le Code'}
+      </a>
+    `;
+  }
+  if (project.pdfs && project.pdfs.length > 0) {
+    project.pdfs.forEach((pdf) => {
+      const hasPrimary = project.link || project.codeLink;
+      const btnClass = hasPrimary ? 'btn-secondary' : 'btn-primary';
+      modalActionsHtml += `
+        <a href="${pdf.path}" target="_blank" class="btn ${btnClass}" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+          <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
+          ${pdf.label}
+        </a>
+      `;
+    });
+  } else if (project.pdfLink) {
+    const hasPrimary = project.link || project.codeLink;
+    const btnClass = hasPrimary ? 'btn-secondary' : 'btn-primary';
+    modalActionsHtml += `
+      <a href="${project.pdfLink}" target="_blank" class="btn ${btnClass}" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
         <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
         ${currentLang === 'en' ? 'Read Project Sheet' : 'Lire la Fiche Projet'}
       </a>

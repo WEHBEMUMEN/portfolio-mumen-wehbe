@@ -148,8 +148,29 @@ document.addEventListener('DOMContentLoaded', () => {
           </a>
         `;
       }
-      if (project.pdfLink) {
+      if (project.codeLink) {
         const btnClass = project.link ? 'btn-secondary' : 'btn-primary';
+        actionRow.innerHTML += `
+          <a href="${project.codeLink}" target="_blank" class="btn ${btnClass}" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+            <i data-lucide="code" style="width: 18px; height: 18px;"></i>
+            ${lang === 'en' ? 'View Code' : 'Voir le Code'}
+          </a>
+        `;
+      }
+      if (project.pdfs && project.pdfs.length > 0) {
+        project.pdfs.forEach((pdf) => {
+          const hasPrimary = project.link || project.codeLink;
+          const btnClass = hasPrimary ? 'btn-secondary' : 'btn-primary';
+          actionRow.innerHTML += `
+            <a href="../../${pdf.path}" target="_blank" class="btn ${btnClass}" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+              <i data-lucide="file-text" style="width: 18px; height: 18px;"></i>
+              ${pdf.label}
+            </a>
+          `;
+        });
+      } else if (project.pdfLink) {
+        const hasPrimary = project.link || project.codeLink;
+        const btnClass = hasPrimary ? 'btn-secondary' : 'btn-primary';
         actionRow.innerHTML += `
           <a href="../../${project.pdfLink}" target="_blank" class="btn ${btnClass}" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
             <i data-lucide="file-text" style="width: 18px; height: 18px;"></i>

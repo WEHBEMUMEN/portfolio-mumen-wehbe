@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Substructuring Techniques | Mumen Wehbe</title>
+  <script src="https://cdn.jsdelivr.net/npm/lucide/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="../../styles.css">
+  <!-- Theme Color initialization to prevent dark-flash -->
+  <script>
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme === 'light' || (!savedTheme && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+      document.documentElement.classList.add('light-mode');
+    }
+  </script>
+</head>
+<body data-project-index="9">
+  <!-- Ambient background glow blobs -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Header Section -->
+  <header></header>
+
+  <!-- Detailed Page Wrapper -->
+  <main class="project-detail-container">
+    <a href="../../index.html#projects" class="back-btn">
+      <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+      <span id="back-link-text">Back to Projects</span>
+    </a>
+
+    <div class="detail-grid">
+      <div class="visual-pane">
+        <div class="detail-image-card" id="project-img-card">
+          <img src="" alt="" class="detail-image" id="project-img" />
+        </div>
+        <div class="specs-card">
+          <h4 class="specs-title" id="specs-title-text">System Specs</h4>
+          <div class="specs-tags" id="specs-tags-container"></div>
+        </div>
+      </div>
+
+      <div class="content-pane">
+        <span class="proj-category" id="project-cat"></span>
+        <h1 class="proj-title" id="project-title-text"></h1>
+
+        <div class="info-section">
+          <h2 class="info-title" id="challenge-title">
+            <i data-lucide="alert-circle" style="width: 20px; height: 20px; color: var(--accent-cyan); flex-shrink: 0;"></i>
+            The Challenge
+          </h2>
+          <p class="info-text" id="challenge-text"></p>
+        </div>
+
+        <div class="info-section">
+          <h2 class="info-title" id="solution-title">
+            <i data-lucide="check-circle" style="width: 20px; height: 20px; color: var(--accent-emerald); flex-shrink: 0;"></i>
+            Solution & Achievements
+          </h2>
+          <p class="info-text" id="solution-text"></p>
+          <ul class="achievements-list" id="achievements-container"></ul>
+        </div>
+
+        <div class="action-row">
+          
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer></footer>
+
+  <!-- Shared Subpage Logic -->
+  <script type="module" src="../project-detail.js"></script>
+</body>
+</html>

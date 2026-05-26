@@ -432,6 +432,9 @@ function getProjectDetailLink(title) {
   if (normalized.includes('smart') || normalized.includes('intelligente')) {
     return 'projects/smart-structures/index.html';
   }
+  if (normalized.includes('substructuring') || normalized.includes('sous-structuration')) {
+    return 'projects/substructuring/index.html';
+  }
   return '#';
 }
 

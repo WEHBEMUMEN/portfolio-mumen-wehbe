@@ -125,7 +125,8 @@ export const cvData = {
           link: "https://github.com/WEHBEMUMEN",
           linkText: "View GitHub",
           pdfs: [
-            { label: "Project Sheet", path: "pdfs/project-cnam.pdf" }
+            { label: "Project Sheet", path: "pdfs/project-cnam.pdf" },
+            { label: "Reference Paper: FEM vs. IGA", path: "projects/digital-twin/fem-vs-iga-paper.pdf" }
           ],
           challenge: "Visualizing highly complex Isogeometric Analysis (IGA) simulation data involving high-dimensional physical variables in real-time. Traditional finite element (FEA) software requires massive computation time and lacks interactive web-based dashboarding for immediate structural feedback. Furthermore, validating structural mechanics outcomes under large displacement and nonlinear bending requires extremely precise and mathematical solver cores.",
           solution: "Developed a mathematical order reduction framework (ECSW, DEIM, Gappy POD) and integrated it into a native, high-performance JS 2D computational core executing in under 10 ms. Coupled this core with a fully interactive web 3D Three.js digital twin visualization, rendering stress color heatmaps in real-time. Created an IGA solver validation suite comparing structural mechanics outcomes against traditional FEA results on reference stress benchmarks.",
@@ -179,7 +180,8 @@ export const cvData = {
           image: "images/project-fsi.png",
           codeLink: "https://github.com/WEHBEMUMEN/portfolio-mumen-wehbe/blob/main/projects/fsi-analysis/fsi-analysis.m",
           pdfs: [
-            { label: "Research Report", path: "projects/fsi-analysis/fsi-analysis-report.pdf" }
+            { label: "MATLAB Code Report", path: "projects/fsi-analysis/fsi-analysis-report.pdf" },
+            { label: "Patran-Nastran Report", path: "projects/fsi-analysis/lab_mumen.pdf" }
           ],
           challenge: "Modeling the coupled physical response of an aluminum plate vibrating against an air-filled acoustic cavity box, and validating system eigenvalues against standard uncoupled analytical modes.",
           solution: "Programmed a coupled acoustic-structure modal solver in MATLAB to construct coupled system matrices, compute coupled modes, and plot uncoupled and coupled vibroacoustic responses.",
@@ -275,6 +277,23 @@ export const cvData = {
             "Formulated the coupled fluid-structure equations of motion incorporating gravity-driven free-surface waves.",
             "Successfully recovered the physical frequency of 7.10 Hz (0.28% error) using the Selective Reduced Integration (SRI) correction.",
             "Analyzed the 'sandwich effect' and confirmed that gravity coupling reduces the fundamental system frequency by 70%."
+          ]
+        },
+        {
+          title: "Substructuring Techniques in Structural Dynamics",
+          category: ["fullstack", "academic"],
+          description: "A comparative study and application of substructuring reduction methods (Craig-Bampton, MacNeal, Transmission Simulator) to aerospace launch vehicle dynamics.",
+          tags: ["Substructuring", "Craig-Bampton", "MacNeal", "Aerospace Structures", "ROM", "Structural Dynamics"],
+          image: "images/project-numerical.png",
+          pdfs: [
+            { label: "Comparative Presentation", path: "projects/substructuring/substructuring-presentation.pdf" }
+          ],
+          challenge: "Simplifying massive, multi-million DOF finite element models for aerospace structures to evaluate transient load cases like wind gusts without losing interface accuracy.",
+          solution: "Implemented Component Mode Synthesis (CMS) reduction methods in MATLAB to construct Craig-Bampton and MacNeal representations, validating them on launch vehicle models.",
+          achievements: [
+            "Compared primal (Craig-Bampton) and dual (MacNeal) assembly coupling techniques for experimental data.",
+            "Applied the Transmission Simulator method to mathematically subtract fixture compliance and retrieve unconstrained component dynamics.",
+            "Conducted launch vehicle wind gust simulations to evaluate maximum displacements at transonic flight regimes."
           ]
         }
       ]
@@ -417,7 +436,8 @@ export const cvData = {
           link: "https://github.com/WEHBEMUMEN",
           linkText: "Voir sur GitHub",
           pdfs: [
-            { label: "Fiche Projet", path: "pdfs/project-cnam.pdf" }
+            { label: "Fiche Projet", path: "pdfs/project-cnam.pdf" },
+            { label: "Article de Réf: FEM vs. IGA", path: "projects/digital-twin/fem-vs-iga-paper.pdf" }
           ],
           challenge: "Visualiser des données complexes de simulation par Analyse Isogéométrique (IGA) impliquant des variables physiques multidimensionnelles en temps réel. Les outils FEA traditionnels nécessitent des temps de calcul élevés et manquent d'interactivité web. De plus, l'évaluation précise de grandes déformations non linéaires nécessite des solveurs mathématiques extrêmement rigoureux.",
           solution: "Développement d'un cadre d'hyper-réduction mathématique (ECSW, DEIM, Gappy POD) intégré à un noyau de calcul IGA 2D haute performance codé en JS natif (résolution < 10 ms). Interfaçage avec un Jumeau Numérique 3D web interactif en Three.js résolvant les champs de contraintes en temps réel, et validation de la modélisation vis-à-vis des cas tests de contraintes Kirsch.",
@@ -471,7 +491,8 @@ export const cvData = {
           image: "images/project-fsi.png",
           codeLink: "https://github.com/WEHBEMUMEN/portfolio-mumen-wehbe/blob/main/projects/fsi-analysis/fsi-analysis.m",
           pdfs: [
-            { label: "Rapport de Recherche", path: "projects/fsi-analysis/fsi-analysis-report.pdf" }
+            { label: "Rapport de Code MATLAB", path: "projects/fsi-analysis/fsi-analysis-report.pdf" },
+            { label: "Rapport Patran-Nastran", path: "projects/fsi-analysis/lab_mumen.pdf" }
           ],
           challenge: "Modéliser la réponse physique couplée d'une plaque d'aluminium vibrant contre une cavité acoustique remplie d'air, et valider les modes du système par rapport aux modes analytiques découplés.",
           solution: "Programmation d'un solveur modal couplé acoustique-structure dans MATLAB pour construire les matrices du système couplé, calculer les modes couplés et tracer les réponses vibroacoustiques découplées et couplées.",
@@ -567,6 +588,23 @@ export const cvData = {
             "Formulation des équations de mouvement couplées fluide-structure intégrant les ondes de surface libre entraînées par la gravité.",
             "Récupération réussie de la fréquence physique de 7,10 Hz (erreur de 0,28%) à l'aide de la correction SRI.",
             "Analyse de l'effet 'sandwich' et confirmation que le couplage gravitationnel réduit la fréquence fondamentale du système de 70%."
+          ]
+        },
+        {
+          title: "Techniques de Sous-structuration en Dynamique des Structures",
+          category: ["fullstack", "academic"],
+          description: "Étude comparative et application de méthodes de réduction par sous-structuration (Craig-Bampton, MacNeal, Simulateur de Transmission) aux lanceurs aérospatiaux.",
+          tags: ["Sous-structuration", "Craig-Bampton", "MacNeal", "Structures Aérospatiales", "ROM", "Dynamique des Structures"],
+          image: "images/project-numerical.png",
+          pdfs: [
+            { label: "Présentation Comparative", path: "projects/substructuring/substructuring-presentation.pdf" }
+          ],
+          challenge: "Simplifier des modèles éléments finis de plusieurs millions de degrés de liberté pour des structures aérospatiales afin d'évaluer des cas de charges transitoires comme les rafales de vent sans perdre de précision aux interfaces.",
+          solution: "Mise en œuvre de méthodes de réduction par synthèse modale (CMS) sous MATLAB pour construire des représentations de Craig-Bampton et MacNeal, avec validation sur des modèles de lanceurs spatiaux.",
+          achievements: [
+            "Comparaison des techniques de couplage par assemblage primal (Craig-Bampton) et dual (MacNeal) pour les données expérimentales.",
+            "Application de la méthode du simulateur de transmission pour soustraire mathématiquement la souplesse du montage et récupérer la dynamique des composants non contraints.",
+            "Réalisation de simulations de rafales de vent sur des lanceurs pour évaluer les déplacements maximaux en régimes de vol transsoniques."
           ]
         }
       ]

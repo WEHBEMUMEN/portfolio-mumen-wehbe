@@ -250,7 +250,7 @@ export const cvData = {
           category: ["fullstack", "academic"],
           description: "A multi-regime finite element analysis of a highly flexible cantilever beam, including non-linear static, linear dynamic, and implicit transient analysis.",
           tags: ["FEA", "Non-linear Static", "Implicit Dynamics", "Newmark-beta", "Cantilever Beam", "Numerical Analysis"],
-          image: "images/project-optimization.png",
+          image: "images/project-integrity.png",
           pdfs: [
             { label: "Research Report", path: "projects/structural-optimization/project2-report.pdf" }
           ],
@@ -267,7 +267,7 @@ export const cvData = {
           category: ["fullstack", "academic"],
           description: "Numerical investigation of the hydroelastic behavior of fluid storage systems, modeling incompressible fluid coupling and gravity-driven sloshing modes.",
           tags: ["Hydroelasticity", "Sloshing", "Finite Elements", "MATLAB", "Coupled Systems"],
-          image: "images/project-hydroelasticity.png",
+          image: "images/project-tank.png",
           pdfs: [
             { label: "Project Presentation", path: "projects/hydroelasticity/hydroelasticity-presentation.pdf" }
           ],
@@ -284,7 +284,7 @@ export const cvData = {
           category: ["fullstack", "academic"],
           description: "A comparative study and application of substructuring reduction methods (Craig-Bampton, MacNeal, Transmission Simulator) to aerospace launch vehicle dynamics.",
           tags: ["Substructuring", "Craig-Bampton", "MacNeal", "Aerospace Structures", "ROM", "Structural Dynamics"],
-          image: "images/project-numerical.png",
+          image: "images/project-substructuring.png",
           pdfs: [
             { label: "Comparative Presentation", path: "projects/substructuring/substructuring-presentation.pdf" }
           ],
@@ -561,7 +561,7 @@ export const cvData = {
           category: ["fullstack", "academic"],
           description: "Analyse par éléments finis multi-régimes d'une poutre cantilever hautement flexible, comprenant des analyses statiques non linéaires, dynamiques linéaires et transitoires implicites.",
           tags: ["FEA", "Statique Non-linéaire", "Dynamique Implicite", "Newmark-bêta", "Poutre Cantilever", "Analyse Numérique"],
-          image: "images/project-optimization.png",
+          image: "images/project-integrity.png",
           pdfs: [
             { label: "Rapport de Recherche", path: "projects/structural-optimization/project2-report.pdf" }
           ],
@@ -578,7 +578,7 @@ export const cvData = {
           category: ["fullstack", "academic"],
           description: "Étude numérique du comportement hydroélastique des systèmes de stockage de fluides, modélisant le couplage fluide incompressible et les modes de ballottement induits par la gravité.",
           tags: ["Hydroélasticité", "Ballottement", "Éléments Finis", "MATLAB", "Systèmes Couplés"],
-          image: "images/project-hydroelasticity.png",
+          image: "images/project-tank.png",
           pdfs: [
             { label: "Présentation du Projet", path: "projects/hydroelasticity/hydroelasticity-presentation.pdf" }
           ],
@@ -595,7 +595,7 @@ export const cvData = {
           category: ["fullstack", "academic"],
           description: "Étude comparative et application de méthodes de réduction par sous-structuration (Craig-Bampton, MacNeal, Simulateur de Transmission) aux lanceurs aérospatiaux.",
           tags: ["Sous-structuration", "Craig-Bampton", "MacNeal", "Structures Aérospatiales", "ROM", "Dynamique des Structures"],
-          image: "images/project-numerical.png",
+          image: "images/project-substructuring.png",
           pdfs: [
             { label: "Présentation Comparative", path: "projects/substructuring/substructuring-presentation.pdf" }
           ],

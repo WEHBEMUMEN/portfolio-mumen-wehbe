@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mumen Wehbe - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4;
+      margin: 1.2cm 1.4cm 1.2cm 1.4cm;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: #334155;
+      background-color: #fff;
+      -webkit-print-color-adjust: exact;
+    }
+    
+    /* Header Styles */
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .profile-photo-wrapper {
+      margin-right: 18px;
+      flex-shrink: 0;
+    }
+    .profile-photo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: block;
+    }
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .name {
+      font-size: 26px;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin: 0 0 2px 0;
+      letter-spacing: -0.02em;
+    }
+    .title-msc {
+      font-size: 14px;
+      font-weight: 500;
+      color: #475569;
+      margin: 0 0 2px 0;
+    }
+    .title-eng {
+      font-size: 12px;
+      font-weight: 400;
+      color: #64748b;
+      margin: 0;
+    }
+    
+    .divider {
+      border-bottom: 2px solid #e2e8f0;
+      margin-bottom: 20px;
+    }
+    
+    /* Main Layout */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+    
+    .sidebar {
+      width: 29%;
+      flex-shrink: 0;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 14px 14px;
+      background-color: #fff;
+    }
+    
+    .main-content {
+      width: 67%;
+      flex-shrink: 0;
+    }
+    
+    /* Sidebar Section Styles */
+    .sidebar-section {
+      margin-bottom: 22px;
+    }
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+    .sidebar-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #1e3a8a;
+      letter-spacing: 0.05em;
+      margin: 0 0 8px 0;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-transform: uppercase;
+    }
+    .sidebar-title svg {
+      color: #2563eb;
+      flex-shrink: 0;
+    }
+    .about-text {
+      font-size: 10.5px;
+      color: #475569;
+      line-height: 1.5;
+      text-align: justify;
+      margin: 0;
+    }
+    
+    /* Contact List */
+    .contact-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      font-size: 10.5px;
+      color: #475569;
+    }
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+    .contact-icon {
+      color: #2563eb;
+      margin-right: 8px;
+      margin-top: 1px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-value {
+      word-break: break-all;
+      line-height: 1.3;
+    }
+    .contact-value a {
+      color: #475569;
+      text-decoration: none;
+    }
+    
+    /* Skills List */
+    .skills-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .skill-item {
+      font-size: 10.5px;
+      color: #475569;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .skill-item:last-child {
+      margin-bottom: 0;
+    }
+    .skill-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #2563eb;
+      flex-shrink: 0;
+    }
+    
+    /* Languages List */
+    .languages-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .lang-item {
+      font-size: 10.5px;
+      color: #475569;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .lang-item:last-child {
+      margin-bottom: 0;
+    }
+    .lang-name {
+      font-weight: 600;
+      color: #334155;
+    }
+    
+    /* Main Content Section Styles */
+    .section {
+      margin-bottom: 22px;
+    }
+    .section:last-child {
+      margin-bottom: 0;
+    }
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1e3a8a;
+      letter-spacing: 0.05em;
+      margin: 0 0 12px 0;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+    }
+    .section-title svg {
+      color: #2563eb;
+      flex-shrink: 0;
+    }
+    
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 18px;
+      margin-left: 8px;
+      border-left: 2px solid #e2e8f0;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 22px;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 4px;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -24px;
+      top: 3px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #3b82f6;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #3b82f6;
+    }
+    .timeline-date {
+      font-size: 10px;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 3px;
+      display: block;
+    }
+    .timeline-header-text {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 4px;
+    }
+    .timeline-inst {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0;
+    }
+    .timeline-subinst {
+      font-size: 11px;
+      font-weight: 600;
+      color: #2563eb;
+      margin: 1px 0 0 0;
+    }
+    .timeline-degree {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #475569;
+      margin: 1px 0 0 0;
+    }
+    .timeline-grade {
+      font-size: 10.5px;
+      color: #475569;
+      margin-top: 3px;
+    }
+    .timeline-grade-val {
+      font-weight: 700;
+      background-color: #f1f5f9;
+      padding: 1px 5px;
+      border-radius: 3px;
+      color: #1e293b;
+    }
+    
+    /* Timeline Bullets */
+    .timeline-bullets {
+      margin: 6px 0 0 0;
+      padding-left: 14px;
+      list-style-type: disc;
+    }
+    .timeline-bullets li {
+      font-size: 11px;
+      color: #475569;
+      margin-bottom: 5px;
+      line-height: 1.45;
+      text-align: justify;
+    }
+    .timeline-bullets li:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <div class="header">
+    <div class="profile-photo-wrapper">
+      <img src="../images/profile.png" alt="Mumen Wehbe" class="profile-photo">
+    </div>
+    <div class="header-text">
+      <h1 class="name">Mumen Wehbe</h1>
+      <div class="title-msc">M.Sc. Student in Structural Mechanics</div>
+      <div class="title-eng">Mechatronics Engineer</div>
+    </div>
+  </div>
+  
+  <div class="divider"></div>
+  
+  <!-- Main Layout Container -->
+  <div class="container">
+  
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+      
+      <!-- About Me Section -->
+      <div class="sidebar-section">
+        <h2 class="sidebar-title">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          About Me
+        </h2>
+        <p class="about-text">
+          Graduated in mechatronics engineering and currently pursuing a Master 2 in Mechanics in Paris, I possess solid practical experience. My background includes designing advanced robotics curricula, coaching award-winning student teams in competitions, and engineering on-grid and off-grid connected solar systems. Passionate and rigorous, I leverage my skills in Python, SolidWorks, and systems design to solve concrete engineering challenges.
+        </p>
+      </div>
+      
+      <!-- Contact Section -->
+      <div class="sidebar-section">
+        <h2 class="sidebar-title">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Contact
+        </h2>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <span class="contact-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span class="contact-value">+33 7 59 87 66 17</span>
+          </li>
+          <li class="contact-item">
+            <span class="contact-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </span>
+            <span class="contact-value"><a href="mailto:wehbi236@gmail.com">wehbi236@gmail.com</a></span>
+          </li>
+          <li class="contact-item">
+            <span class="contact-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </span>
+            <span class="contact-value"><a href="https://linkedin.com/in/mumen-wehbe" target="_blank">linkedin.com/in/mumen-wehbe</a></span>
+          </li>
+          <li class="contact-item">
+            <span class="contact-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+            </span>
+            <span class="contact-value"><a href="https://mumen-wehbe.vercel.app/" target="_blank">mumen-wehbe.vercel.app</a></span>
+          </li>
+          <li class="contact-item">
+            <span class="contact-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span class="contact-value">Paris, France</span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Skills Section -->
+      <div class="sidebar-section">
+        <h2 class="sidebar-title">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.54 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Skills
+        </h2>
+        <ul class="skills-list">
+          <li class="skill-item"><span class="skill-dot"></span>C++</li>
+          <li class="skill-item"><span class="skill-dot"></span>PYTHON</li>
+          <li class="skill-item"><span class="skill-dot"></span>Matlab</li>
+          <li class="skill-item"><span class="skill-dot"></span>SolidWorks</li>
+          <li class="skill-item"><span class="skill-dot"></span>Abaqus</li>
+          <li class="skill-item"><span class="skill-dot"></span>MSC PATRAN/NASTRAN</li>
+          <li class="skill-item"><span class="skill-dot"></span>COMSOL</li>
+          <li class="skill-item"><span class="skill-dot"></span>SAM Modeling</li>
+          <li class="skill-item"><span class="skill-dot"></span>Web Design</li>
+          <li class="skill-item"><span class="skill-dot"></span>Microsoft Office</li>
+        </ul>
+      </div>
+      
+      <!-- Languages Section -->
+      <div class="sidebar-section">
+        <h2 class="sidebar-title">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+          Languages
+        </h2>
+        <ul class="languages-list">
+          <li class="lang-item"><span class="lang-name">English</span> (Fluent)</li>
+          <li class="lang-item"><span class="lang-name">Arabic</span> (Native)</li>
+          <li class="lang-item"><span class="lang-name">French</span> (Intermediate)</li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <!-- Right Main Content -->
+    <div class="main-content">
+      
+      <!-- Education Section -->
+      <div class="section">
+        <h2 class="section-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
+          Education
+        </h2>
+        <div class="timeline">
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">(2024 – Present)</span>
+            <div class="timeline-header-text">
+              <h3 class="timeline-inst">LE CNAM – PARIS, FRANCE</h3>
+              <span class="timeline-degree">MASTER'S DEGREE IN MECHANICAL ENGINEERING (M2)</span>
+            </div>
+            <div class="timeline-grade">Grade: <span class="timeline-grade-val">A-</span></div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">(2018 – 2022)</span>
+            <div class="timeline-header-text">
+              <h3 class="timeline-inst">CYPRUS INTERNATIONAL UNIVERSITY – NICOSIA, CYPRUS</h3>
+              <span class="timeline-degree">BACHELOR OF SCIENCE IN MECHATRONICS ENGINEERING (BSC)</span>
+            </div>
+            <div class="timeline-grade">Grade: <span class="timeline-grade-val">A</span></div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Professional Experience Section -->
+      <div class="section">
+        <h2 class="section-title">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+          Professional Experience
+        </h2>
+        <div class="timeline">
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">(04/2026 – Present)</span>
+            <div class="timeline-header-text">
+              <h3 class="timeline-inst">R&D INTERN – DIGITAL TWIN & ISOGEOMETRIC ANALYSIS (IGA)</h3>
+              <span class="timeline-subinst">LE CNAM (EPN04 LABORATORY) – PARIS, FRANCE</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Reduced Order Modeling (ROM) via Isogeometric Analysis (IGA) and hyper-reduction (ECSW, DEIM, Gappy POD) of structures in large displacements.</li>
+              <li>Development of a native JS 2D IGA computational core for real-time online resolution (&lt; 10 ms, 80x–120x speedup).</li>
+              <li>Design of an interactive Digital Twin (web 3D Three.js, real-time multiphysics parameters) coupled with a 3D-printed physical demonstrator.</li>
+              <li>Metrological validation and convergence of solvers on reference test cases (Kirsch, non-linear structural beam bending).</li>
+            </ul>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">(11/2022 – 02/2023)</span>
+            <div class="timeline-header-text">
+              <h3 class="timeline-inst">ROBOTICS & STEM INSTRUCTOR</h3>
+              <span class="timeline-subinst">STEMA & FUN ROBOTICS – DUBAI, UNITED ARAB EMIRATES</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Designed and implemented advanced robotics curricula (Vex IQ, Python) and led interactive workshops at the Sharjah International Book Fair.</li>
+              <li>Coached student teams for the Vex V5 competition (achieving prestigious awards in 'Excellence' and 'Design' categories) and provided custom training sessions.</li>
+            </ul>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">(07/2022 – 08/2022)</span>
+            <div class="timeline-header-text">
+              <h3 class="timeline-inst">SOLAR ENGINEER</h3>
+              <span class="timeline-subinst">ALEMDAR TEKNIK – NICOSIA, CYPRUS</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Designed and supervised residential solar PV installations for on-grid and off-grid systems, utilizing SAM modeling for performance analysis.</li>
+              <li>Diagnosed and resolved complex technical issues in photovoltaic systems (inverters, batteries, and panels), ensuring optimal energy yield.</li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+
+</body>
+</html>

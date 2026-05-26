@@ -33,13 +33,19 @@
       margin-right: 18px;
       flex-shrink: 0;
     }
-    .profile-photo {
+    .profile-photo-container {
       width: 90px;
       height: 90px;
       border-radius: 50%;
-      object-fit: cover;
       border: 3px solid #fff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      display: block;
+    }
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
     .header-text {
@@ -80,7 +86,7 @@
     }
     
     .sidebar {
-      width: 29%;
+      width: 31%;
       flex-shrink: 0;
       border: 1px solid #cbd5e1;
       border-radius: 8px;
@@ -89,7 +95,7 @@
     }
     
     .main-content {
-      width: 67%;
+      width: 65%;
       flex-shrink: 0;
     }
     
@@ -135,7 +141,7 @@
       display: flex;
       align-items: flex-start;
       margin-bottom: 10px;
-      font-size: 10.5px;
+      font-size: 10px;
       color: #475569;
     }
     .contact-item:last-child {
@@ -151,7 +157,8 @@
       justify-content: center;
     }
     .contact-value {
-      word-break: break-all;
+      word-break: keep-all;
+      white-space: nowrap;
       line-height: 1.3;
     }
     .contact-value a {
@@ -321,7 +328,9 @@
   <!-- Header Section -->
   <div class="header">
     <div class="profile-photo-wrapper">
-      <img src="../images/profile.png" alt="Mumen Wehbe" class="profile-photo">
+      <div class="profile-photo-container">
+        <img src="../images/profile.png" alt="Mumen Wehbe" class="profile-photo">
+      </div>
     </div>
     <div class="header-text">
       <h1 class="name">Mumen Wehbe</h1>

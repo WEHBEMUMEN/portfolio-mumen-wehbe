@@ -423,7 +423,7 @@ function getProjectDetailLink(title) {
   if (normalized.includes('tank') || normalized.includes('réservoirs')) {
     return 'projects/tank-hydroelasticity/index.html';
   }
-  if (normalized.includes('hydroelasticity') || normalized.includes('hydroé')) {
+  if (normalized.includes('hydroelastic') || normalized.includes('aeroelastic') || normalized.includes('hydroé') || normalized.includes('aéroé')) {
     return 'projects/hydroelasticity/index.html';
   }
   if (normalized.includes('numerical') || normalized.includes('numérique')) {
@@ -443,7 +443,9 @@ function renderProjectCards(projectsList, data) {
   if (projectsList.length === 0) {
     elements.projectsGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No projects found in this category.</p>`;
     return;
-   elements.projectsGrid.innerHTML = projectsList.map(project => {
+  }
+
+  elements.projectsGrid.innerHTML = projectsList.map(project => {
     // Generate links HTML for dual resource links (App + GitHub + Code + PDF)
     let linksHtml = '';
     if (project.appLink) {

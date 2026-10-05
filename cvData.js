@@ -191,6 +191,23 @@ export const cvData = {
           ]
         },
         {
+          title: "Aeroelastic & Hydroelastic Stability of a Wing",
+          category: ["fullstack", "academic"],
+          description: "Investigation of aeroelastic and hydroelastic stability of a high-aspect-ratio rectangular wing in air and water, analyzing coupled mode flutter and static divergence.",
+          tags: ["Aeroelasticity", "Hydroelasticity", "Flutter", "Divergence", "MATLAB", "State-space"],
+          image: "images/project-hydroelasticity.png",
+          pdfs: [
+            { label: "Research Report", path: "projects/hydroelasticity/project-4-report.pdf" }
+          ],
+          challenge: "Predicting dynamic instability (flutter) and static instability (divergence) of flexible lifting surfaces, and evaluating the dramatic impact of fluid density and added mass in water.",
+          solution: "Developed a 2-DOF state-space eigenvalue solver in MATLAB using Lagrange's equations and the Assumed Shapes Method, incorporating potential flow added mass terms.",
+          achievements: [
+            "Formulated 2-DOF equations of motion coupling bending (heaving) and torsion (pitching).",
+            "Analyzed mode coalescence and identified critical flutter and divergence speeds in both air and water.",
+            "Validated solver convergence against analytical closed-form solutions with under 1% error."
+          ]
+        },
+        {
           title: "Advanced Numerical Methods & Beam Solvers",
           category: ["frontend", "academic"],
           description: "Custom MATLAB solvers for higher-order beam kinematics, shear deformation, and torsional-flexural coupling.",
@@ -481,6 +498,23 @@ export const cvData = {
           achievements: [
             "Simulation des vibrations induites par l'écoulement et validation des FRF par rapport aux données expérimentales.",
             "Rédaction d'un rapport de recherche approfondi évaluant l'effet de masse ajoutée sur les parois immergées."
+          ]
+        },
+        {
+          title: "Stabilité Aéroélastique & Hydroélastique d'une Aile",
+          category: ["fullstack", "academic"],
+          description: "Étude de la stabilité aéroélastique et hydroélastique d'une aile rectangulaire à grand élancement dans l'air et dans l'eau, avec analyse du flottement couplé et de la divergence statique.",
+          tags: ["Aéroélasticité", "Hydroélasticité", "Flottement", "Divergence", "MATLAB", "Espace d'états"],
+          image: "images/project-hydroelasticity.png",
+          pdfs: [
+            { label: "Rapport de Recherche", path: "projects/hydroelasticity/project-4-report.pdf" }
+          ],
+          challenge: "Prédire l'instabilité dynamique (flottement/flutter) et l'instabilité statique (divergence) de surfaces portantes flexibles, et évaluer l'impact dramatique de la densité du fluide et de la masse ajoutée dans l'eau.",
+          solution: "Développement sous MATLAB d'un solveur de valeurs propres en espace d'états à 2 degrés de liberté (2DOF) utilisant les équations de Lagrange et la méthode des formes supposées, intégrant les termes de masse ajoutée par écoulement potentiel.",
+          achievements: [
+            "Formulation d'équations de mouvement à 2DOF couplant la flexion (pompage) et la torsion (tangage).",
+            "Analyse de la coalescence des modes et identification des vitesses critiques de flottement et de divergence dans l'air et dans l'eau.",
+            "Validation de la convergence du solveur par rapport aux solutions analytiques exactes avec une erreur inférieure à 1%."
           ]
         },
         {

@@ -2,7 +2,7 @@ export const cvData = {
   en: {
     meta: {
       title: "Mumen Wehbe | Portfolio",
-      description: "Professional Portfolio of Mumen Wehbe - Mechatronics Engineer & M.Sc. in Structural Mechanics",
+      description: "Professional Portfolio of Mumen Wehbe - Mechanical & Mechatronics Engineer, M.Sc. in Structural Mechanics",
     },
     nav: {
       home: "Home",
@@ -17,25 +17,25 @@ export const cvData = {
     hero: {
       greeting: "Hello, I'm",
       name: "Mumen Wehbe",
-      title: "Mechatronics Engineer",
-      subtitle: "M.Sc. in Structural Mechanics from Le CNAM Paris. Creating interactive Digital Twins, high-performance computational systems, and advanced robotics architectures.",
+      title: "Mechanical & Mechatronics Engineer",
+      subtitle: "M.Sc. in Structural Mechanics (Le CNAM Paris). Bridging mechanical engineering, FEA & physical simulation with interactive 3D digital twins and computational software systems.",
       ctaPrimary: "View Projects",
       ctaSecondary: "Contact Me",
     },
     about: {
       title: "About Me",
       subtitle: "My Journey",
-      text1: "Graduated in mechatronics engineering and holding a Master 2 in Structural Mechanics in Paris, I possess solid practical and research experience. Passionate and rigorous, I leverage my skills in Python, C++, JavaScript, SolidWorks, Three.js, and computational mechanics to solve concrete engineering challenges.",
-      text2: "My background includes developing real-time interactive Digital Twins with Isogeometric Analysis (IGA), authoring research on projection-based Reduced Order Modeling (ROM), designing advanced robotics curricula, and engineering photovoltaic solar systems. I excel at bridging the gap between mechanical hardware, physical simulation solvers, and modern web dashboards.",
+      text1: "Graduated in mechatronics engineering and holding an M.Sc. in Structural Mechanics from Le CNAM in Paris, I bridge both complementary disciplines: core mechanical engineering (structural dynamics, finite element analysis, CAD, robotics, and fluid-structure interaction) and modern computational software development (Python, C++, Three.js, and interactive 3D digital twins).",
+      text2: "My background includes developing real-time interactive Digital Twins with Isogeometric Analysis (IGA), authoring research on projection-based Reduced Order Modeling (ROM), designing advanced robotics curricula, and engineering photovoltaic solar systems. I excel at translating complex physical models and mathematical solvers into high-performance, accessible digital platforms.",
       stats: [
         { value: "B.Sc.", label: "Mechatronics Eng." },
         { value: "M.Sc.", label: "Structural Mechanics" },
-        { value: "High", label: "Technical Expertise" }
+        { value: "Dual", label: "Mechanical & Software" }
       ]
     },
     skills: {
       title: "Skills & Expertise",
-      subtitle: "My Technical Stack",
+      subtitle: "Engineering & Computational Competencies",
       categories: {
         frontend: "Engineering Programming",
         backend: "FEA & Simulation Tools",
@@ -327,25 +327,25 @@ export const cvData = {
     hero: {
       greeting: "Bonjour, je suis",
       name: "Mumen Wehbe",
-      title: "Ingénieur Mécatronique",
-      subtitle: "Diplômé de Master 2 en Mécanique des Structures au CNAM Paris. Concepteur de Jumeaux Numériques interactifs, de solveurs haute performance et d'architectures robotiques avancées.",
+      title: "Ingénieur Mécanique & Mécatronique",
+      subtitle: "Diplômé de Master 2 en Mécanique des Structures au CNAM Paris. Alliant mécanique des structures, calcul par éléments finis (FEA) et simulation physique avec jumeaux numériques 3D interactifs et développement logiciel.",
       ctaPrimary: "Voir mes projets",
       ctaSecondary: "Me contacter",
     },
     about: {
       title: "À Propos de Moi",
       subtitle: "Mon Parcours",
-      text1: "Diplômé en génie mécatronique et titulaire d'un Master 2 en Mécanique des Structures à Paris, je possède une solide expérience pratique et de recherche. Passionné et rigoureux, je mobilise mes compétences en Python, C++, JavaScript, SolidWorks, Three.js et mécanique computationnelle pour résoudre des défis d'ingénierie concrets.",
-      text2: "Mon parcours inclut le développement de Jumeaux Numériques interactifs avec Analyse Isogéométrique (IGA), la recherche en modélisation d'ordre réduit (ROM), la conception de programmes robotiques avancés et l'ingénierie de systèmes solaires photovoltaïques. J'excelle dans l'interfaçage de modélisations physiques avec des tableaux de bord web 3D interactifs en temps réel.",
+      text1: "Diplômé en génie mécatronique et titulaire d'un Master 2 en Mécanique des Structures au CNAM Paris, j'unis deux expertises complémentaires : la mécanique des structures (analyse par éléments finis, dynamique des structures, CAO, robotique, interaction fluide-structure) et le développement logiciel scientifique (Python, C++, Three.js et jumeaux numériques web temps réel).",
+      text2: "Mon parcours inclut le développement de Jumeaux Numériques interactifs avec Analyse Isogéométrique (IGA), la recherche en modélisation d'ordre réduit (ROM), la conception de programmes robotiques avancés et l'ingénierie de systèmes solaires photovoltaïques. J'excelle dans la transformation de solveurs physiques complexes en plateformes numériques interactives haute performance.",
       stats: [
         { value: "B.Sc.", label: "Ing. Mécatronique" },
         { value: "M.Sc.", label: "Mécanique Structures" },
-        { value: "Forte", label: "Expertise Technique" }
+        { value: "Double", label: "Mécanique & Logiciel" }
       ]
     },
     skills: {
       title: "Compétences",
-      subtitle: "Mon Stack Technique",
+      subtitle: "Compétences Ingénierie & Numérique",
       categories: {
         frontend: "Programmation Technique",
         backend: "Outils FEA & Simulation",

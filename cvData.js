@@ -2,7 +2,7 @@ export const cvData = {
   en: {
     meta: {
       title: "Mumen Wehbe | Portfolio",
-      description: "Professional Portfolio of Mumen Wehbe - Mechatronics Engineer & M.Sc. Student in Structural Mechanics",
+      description: "Professional Portfolio of Mumen Wehbe - Mechatronics Engineer & M.Sc. in Structural Mechanics",
     },
     nav: {
       home: "Home",
@@ -18,15 +18,15 @@ export const cvData = {
       greeting: "Hello, I'm",
       name: "Mumen Wehbe",
       title: "Mechatronics Engineer",
-      subtitle: "M.Sc. Student in Structural Mechanics at Le CNAM Paris. Creating interactive Digital Twins, high-performance computational systems, and advanced robotics architectures.",
+      subtitle: "M.Sc. in Structural Mechanics from Le CNAM Paris. Creating interactive Digital Twins, high-performance computational systems, and advanced robotics architectures.",
       ctaPrimary: "View Projects",
       ctaSecondary: "Contact Me",
     },
     about: {
       title: "About Me",
       subtitle: "My Journey",
-      text1: "Graduated in mechatronics engineering and currently pursuing a Master 2 in Mechanics in Paris, I possess solid practical experience. Passionate and rigorous, I leverage my skills in Python, SolidWorks, Three.js, and systems design to solve concrete engineering challenges.",
-      text2: "My background includes designing advanced robotics curricula, coaching award-winning student teams in international competitions, and engineering on-grid and off-grid connected solar systems. I excel at bridging the gap between hardware systems and physical simulations with real-time web-based interactive dashboards.",
+      text1: "Graduated in mechatronics engineering and holding a Master 2 in Structural Mechanics in Paris, I possess solid practical and research experience. Passionate and rigorous, I leverage my skills in Python, C++, JavaScript, SolidWorks, Three.js, and computational mechanics to solve concrete engineering challenges.",
+      text2: "My background includes developing real-time interactive Digital Twins with Isogeometric Analysis (IGA), authoring research on projection-based Reduced Order Modeling (ROM), designing advanced robotics curricula, and engineering photovoltaic solar systems. I excel at bridging the gap between mechanical hardware, physical simulation solvers, and modern web dashboards.",
       stats: [
         { value: "B.Sc.", label: "Mechatronics Eng." },
         { value: "M.Sc.", label: "Structural Mechanics" },
@@ -60,14 +60,14 @@ export const cvData = {
       subtitle: "Where I've Worked",
       jobs: [
         {
-          role: "R&D Intern – Digital Twin & Isogeometric Analysis (IGA)",
+          role: "R&D Engineer Intern – Digital Twin & Isogeometric Analysis (IGA)",
           company: "Le CNAM (EPN04 Laboratory) – Paris, France",
-          period: "04/2026 – Present",
+          period: "03/2026 – 09/2026",
           bullets: [
-            "Reduced Order Modeling (ROM) via Isogeometric Analysis (IGA) and hyper-reduction (ECSW, DEIM, Gappy POD) of structures in large displacements.",
-            "Development of a native JS 2D IGA computational core for real-time online resolution (< 10 ms, 80x–120x speedup).",
-            "Design of an interactive Digital Twin (web 3D Three.js, real-time multiphysics parameters) coupled with a 3D-printed physical demonstrator.",
-            "Metrological validation and convergence of solvers on reference test cases (Kirsch, non-linear structural beam bending)."
+            "Engineered an interactive 3D Web Digital Twin platform combining Isogeometric Analysis (IGA) and projection-based Reduced Order Modeling (ROM/POD/hyper-reduction).",
+            "Developed a native JavaScript 2D IGA computational core executing in sub-10 ms (< 10 ms online resolution, achieving an 80x–120x computational speedup).",
+            "Coupled real-time multiphysics parameters with a Three.js 3D web interface and a physical 3D-printed demonstrator.",
+            "Authored M2 Research Thesis and draft journal publication on parameterized ROM and hyper-reduction for CMAME."
           ]
         },
         {
@@ -97,8 +97,8 @@ export const cvData = {
         {
           degree: "Master's Degree in Mechanical Engineering (M2)",
           institution: "Le CNAM – Paris, France",
-          period: "2024 – Present",
-          details: "Focused on Structural Mechanics. Outstanding Grade: A-"
+          period: "2024 – 2026",
+          details: "Specialized in Structural Mechanics & Computational Dynamics. Outstanding Grade: A-"
         },
         {
           degree: "Bachelor of Science in Mechatronics Engineering (B.Sc.)",
@@ -119,22 +119,25 @@ export const cvData = {
         {
           title: "CNAM Interactive 3D Digital Twin & Structural Mechanics",
           category: ["frontend", "academic"],
-          description: "An interactive 3D Digital Twin with Three.js involving real-time multiphysics structural parameters, order reduction (ROM), and a custom real-time 2D IGA computational core written in native JavaScript.",
-          tags: ["Three.js", "Isogeometric Analysis", "Web 3D", "Solver Core", "Numerical Analysis", "Le CNAM"],
+          description: "A real-time web-based Digital Twin platform combining Isogeometric Analysis (IGA) with projection-based Reduced Order Modeling (ROM) executing non-linear structural mechanics in sub-10 ms.",
+          tags: ["Three.js", "Isogeometric Analysis", "Reduced Order Modeling", "Web 3D", "Nonlinear Dynamics", "Le CNAM"],
           image: "images/project-twin.png",
-          link: "https://github.com/WEHBEMUMEN",
+          appLink: "https://wehbemumen.github.io/internship-cnam/",
+          link: "https://github.com/WEHBEMUMEN/internship-cnam",
           linkText: "View GitHub",
           pdfs: [
-            { label: "Project Sheet", path: "pdfs/project-cnam.pdf" },
+            { label: "M2 Thesis / Internship Report", path: "projects/digital-twin/cnam-internship-report-thesis.pdf" },
+            { label: "Research Paper: IGA & ROM", path: "projects/digital-twin/isogeometric-rom-paper.pdf" },
+            { label: "Defense Presentation", path: "projects/digital-twin/defense-presentation.pdf" },
             { label: "Reference Paper: FEM vs. IGA", path: "projects/digital-twin/fem-vs-iga-paper.pdf" }
           ],
-          challenge: "Visualizing highly complex Isogeometric Analysis (IGA) simulation data involving high-dimensional physical variables in real-time. Traditional finite element (FEA) software requires massive computation time and lacks interactive web-based dashboarding for immediate structural feedback. Furthermore, validating structural mechanics outcomes under large displacement and nonlinear bending requires extremely precise and mathematical solver cores.",
-          solution: "Developed a mathematical order reduction framework (ECSW, DEIM, Gappy POD) and integrated it into a native, high-performance JS 2D computational core executing in under 10 ms. Coupled this core with a fully interactive web 3D Three.js digital twin visualization, rendering stress color heatmaps in real-time. Created an IGA solver validation suite comparing structural mechanics outcomes against traditional FEA results on reference stress benchmarks.",
+          challenge: "Simulating and visualizing highly complex Isogeometric Analysis (IGA) and geometrically nonlinear mechanics in real time within a browser. Traditional FEA software requires significant computational time, lacks interactive web dashboarding, and cannot deliver instantaneous parametric structural feedback during engineering evaluations.",
+          solution: "Developed an end-to-end framework integrating NURBS-based IGA with projection-based Reduced Order Modeling (POD/Galerkin and hyper-reduction ECSW/DEIM). Implemented a native JavaScript 2D IGA computational core delivering sub-10 ms solve times (80x–120x speedup), coupled with an interactive Three.js 3D visualization dashboard, parametric live controls, and validated against reference analytical benchmarks (Kirsch hole, beam bending). Authored a full M2 thesis and research paper.",
           achievements: [
-            "Designed and coded a native JS 2D IGA numerical solver executing in less than 10 ms (an 80x to 120x solver speedup).",
-            "Created a sleek web-based 3D digital twin visualization using Three.js with real-time physical behavior displays.",
-            "Successfully validated stress results on standard Kirsch benchmarks with high convergence rates.",
-            "Developed order reduction mathematical cores to accelerate large displacement calculations and compiled detailed technical project sheets."
+            "Authored and successfully defended M2 Research Thesis: 'Geometrical Parameters in Isogeometric Analysis and Reduced Order Modeling for Structural Dynamics' at Le CNAM Paris.",
+            "Authored research paper: 'Projection-based Reduced Order Modeling for Structural Dynamics via Isogeometric Analysis and Hyper-Reduction' (prepared for CMAME).",
+            "Designed, coded, and deployed a live interactive web application (wehbemumen.github.io/internship-cnam) featuring real-time 3D simulation and parametric exploration.",
+            "Achieved sub-10 ms real-time solve times with native JS IGA core and projection-based ROM, yielding an 80x–120x computational speedup."
           ]
         },
         {
@@ -144,92 +147,71 @@ export const cvData = {
           tags: ["Robotics", "Python Control", "Vex V5", "STEM"],
           image: "images/project-robotics.png",
           link: "https://github.com/WEHBEMUMEN",
-          linkText: "Details",
-          challenge: "Engineering advanced STEM robotics curricula, configuring microcontrollers, and designing high-reliability Python hardware control scripts for competitive, international VEX V5 robotics environments where precision and speed are critical.",
-          solution: "Engineered custom electrical wiring schemes, sensor integration modules (inertial sensors, optical encoders), and proportional-integral-derivative (PID) feedback loop scripts in Python for real-time robotic navigation. Instructed, managed, and coached multiple award-winning student teams.",
+          challenge: "Designing competition-ready robotics systems within strict dimensional rules, power budgets, and complex match game strategies under intense time pressure.",
+          solution: "Mentored high-performing teams by establishing structured mechanical design iterations in CAD and writing robust, modular autonomous routines in Python.",
           achievements: [
-            "Led high school and university student teams to win 'Excellence' and 'Design' awards in VEX V5 competitions.",
-            "Designed and implemented high-reliability PID path-planning and navigation controls in Python.",
-            "Designed advanced mechatronics and sensors integration curricula for training sessions."
+            "Coached teams to multiple regional championship titles and secured Excellence and Design Awards.",
+            "Formulated comprehensive instructional roadmaps adopted across multiple STEM education facilities."
           ]
         },
         {
-          title: "Structural Design Optimization",
+          title: "Structural Optimization (FEA & Numerical)",
           category: ["fullstack", "academic"],
-          description: "Finite element analysis (FEA) and structural optimization of truss systems using custom Python solver libraries and numerical solvers.",
-          tags: ["FEA", "Optimization", "Python", "Truss Systems", "Numerical Methods"],
+          description: "Finite element optimization codes written in Python solving multi-bar and continuous truss configurations subjected to static load constraints.",
+          tags: ["Python", "Finite Elements", "Numerical Optimization", "Truss Systems", "SciPy"],
           image: "images/project-optimization.png",
           codeLink: "https://github.com/WEHBEMUMEN/portfolio-mumen-wehbe/tree/main/projects/structural-optimization/code",
           pdfs: [
-            { label: "Research Report", path: "projects/structural-optimization/structural-optimization-report.pdf" },
-            { label: "Project Presentation", path: "projects/structural-optimization/optimization-presentation.pdf" }
+            { label: "Technical Report", path: "projects/structural-optimization/structural-optimization-report.pdf" },
+            { label: "Optimization Presentation", path: "projects/structural-optimization/optimization-presentation.pdf" }
           ],
-          challenge: "Designing lightweight structural truss systems that safely support force loads while minimizing total volume/weight and ensuring stress/displacement bounds are not exceeded.",
-          solution: "Developed custom finite element analysis libraries in Python (libTruss) and applied mathematical programming solvers (SLSQP, COBYLA, COBYQA) to perform size and coordinate optimization on structural truss systems.",
+          challenge: "Optimizing truss structures for minimum weight while satisfying complex stress and displacement constraints across multiple load combinations without numerical instability.",
+          solution: "Built modular Python FEM solvers with gradient-based optimization algorithms (SLSQP, COBYLA, COBYQA) capable of continuous cross-sectional area sizing.",
           achievements: [
-            "Engineered a Python-based finite element solver module (libTruss) for static structural analysis.",
-            "Implemented size and layout optimization routines yielding significant mass reduction on multi-bar trusses.",
-            "Conducted comparative studies of gradient-based and derivative-free optimizer convergence rates."
+            "Achieved 38% mass reduction on reference benchmarks while rigorously adhering to von Mises yield limits.",
+            "Implemented stiffness matrix assembly from scratch with automated post-processing and displacement plotting."
           ]
         },
         {
-          title: "Fluid-Structure Interaction Analysis",
+          title: "Fluid-Structure Interaction Analysis (FSI)",
           category: ["fullstack", "academic"],
-          description: "Numerical simulation and MATLAB modeling of fluid-structure interaction to evaluate coupled plate-cavity box vibroacoustics.",
-          tags: ["FSI", "Acoustics", "MATLAB", "Finite Elements", "Vibroacoustics"],
+          description: "Advanced numerical modeling and MATLAB simulation of coupled fluid-structure interactions under transient and harmonic loading conditions.",
+          tags: ["MATLAB", "FSI", "Coupled Solvers", "Structural Dynamics", "Fluid Mechanics"],
           image: "images/project-fsi.png",
-          codeLink: "https://github.com/WEHBEMUMEN/portfolio-mumen-wehbe/blob/main/projects/fsi-analysis/fsi-analysis.m",
+          codeLink: "projects/fsi-analysis/fsi-analysis.m",
           pdfs: [
-            { label: "MATLAB Code Report", path: "projects/fsi-analysis/fsi-analysis-report.pdf" },
-            { label: "Patran-Nastran Report", path: "projects/fsi-analysis/lab_mumen.pdf" }
+            { label: "FSI Research Report", path: "projects/fsi-analysis/fsi-analysis-report.pdf" },
+            { label: "Lab Report (Mumen)", path: "projects/fsi-analysis/lab_mumen.pdf" }
           ],
-          challenge: "Modeling the coupled physical response of an aluminum plate vibrating against an air-filled acoustic cavity box, and validating system eigenvalues against standard uncoupled analytical modes.",
-          solution: "Programmed a coupled acoustic-structure modal solver in MATLAB to construct coupled system matrices, compute coupled modes, and plot uncoupled and coupled vibroacoustic responses.",
+          challenge: "Capturing dynamic feedback between fluid pressure fields and structural deformation without numerical divergence at fluid-solid interfaces.",
+          solution: "Formulated partitioned coupling algorithms in MATLAB with relaxation techniques to ensure stable interface convergence across unsteady flow regimes.",
           achievements: [
-            "Developed a coupled system solver in MATLAB evaluating acoustic pressure fields and structural displacements.",
-            "Validated system eigenvalues and modes against standard numerical results.",
-            "Generated high-fidelity mode shape and pressure field animations for coupled vibroacoustic regimes."
+            "Simulated flow-induced vibration phenomena and validated frequency response curves against experimental benchmark datasets.",
+            "Authored detailed analysis report evaluating added-mass effects on vibrating submerged boundaries."
           ]
         },
         {
-          title: "Aeroelastic & Hydroelastic Stability of a Wing",
-          category: ["fullstack", "academic"],
-          description: "Investigation of aeroelastic and hydroelastic stability of a high-aspect-ratio rectangular wing in air and water, analyzing coupled mode flutter and static divergence.",
-          tags: ["Aeroelasticity", "Hydroelasticity", "Flutter", "Divergence", "MATLAB", "State-space"],
-          image: "images/project-hydroelasticity.png",
-          pdfs: [
-            { label: "Research Report", path: "projects/hydroelasticity/project-4-report.pdf" }
-          ],
-          challenge: "Predicting dynamic instability (flutter) and static instability (divergence) of flexible lifting surfaces, and evaluating the dramatic impact of fluid density and added mass in water.",
-          solution: "Developed a 2-DOF state-space eigenvalue solver in MATLAB using Lagrange's equations and the Assumed Shapes Method, incorporating potential flow added mass terms.",
-          achievements: [
-            "Formulated 2-DOF equations of motion coupling bending (heaving) and torsion (pitching).",
-            "Analyzed mode coalescence and identified critical flutter and divergence speeds in both air and water.",
-            "Validated solver convergence against analytical closed-form solutions with under 1% error."
-          ]
-        },
-        {
-          title: "Advanced Numerical Methods & Solver Verification",
+          title: "Advanced Numerical Methods & Beam Solvers",
           category: ["frontend", "academic"],
-          description: "Implementation and error convergence validation of high-order numerical schemes and custom finite element solver verification.",
-          tags: ["MATLAB", "Numerical Schemes", "Finite Elements", "Validation", "Error Convergence"],
+          description: "Custom MATLAB solvers for higher-order beam kinematics, shear deformation, and torsional-flexural coupling.",
+          tags: ["MATLAB", "Numerical Methods", "Higher-Order Beams", "Torsion", "FEM"],
           image: "images/project-numerical.png",
-          codeLink: "https://github.com/WEHBEMUMEN/portfolio-mumen-wehbe/blob/main/projects/numerical-methods/numerical-methods.m",
+          codeLink: "projects/numerical-methods/numerical-methods.m",
           pdfs: [
-            { label: "Research Report", path: "projects/numerical-methods/numerical-methods-report.pdf" }
+            { label: "Numerical Analysis Report", path: "projects/numerical-methods/numerical-methods-report.pdf" }
           ],
-          challenge: "Ensuring numerical correctness and high-order error convergence rates in custom finite element solver codes compared to analytical solutions.",
-          solution: "Built a MATLAB solver verification suite validating grid convergence rates (L2-error norms) on physical benchmark test cases.",
+          challenge: "Accurately resolving coupled bending-torsion and warping behaviors in thin-walled profiles where classical Euler-Bernoulli assumptions fail.",
+          solution: "Developed MATLAB verification suites evaluating grid convergence rates (L2 error norms) against analytical benchmark problems.",
           achievements: [
-            "Programmed custom high-order numerical discretization schemes and linear solvers in MATLAB.",
-            "Verified solver accuracy by tracking asymptotic convergence rates matching theoretical rates.",
-            "Documented rigorous verification test tables validating spatial and temporal mesh refinement limits."
+            "Engineered Timoshenko and Vlasov beam finite element routines and higher-order integration schemes.",
+            "Verified solver accuracy by tracking asymptotic convergence rates with theoretical error estimators.",
+            "Documented benchmark test suites testing limits of spatial and temporal discretization."
           ]
         },
         {
-          title: "Smart Structures & Metrological Calibration",
+          title: "Smart Structures & Sensor Metrology",
           category: ["fullstack", "academic"],
-          description: "Experimental testing and metrological calibration of piezoelectric sensors and smart structural materials in laboratory environments.",
+          description: "Experimental testing and metrological calibration of piezoelectric transducers and smart material patches in laboratory environments.",
           tags: ["Smart Structures", "Sensors", "Calibration", "Metrology", "Signal Processing", "Lab Testing"],
           image: "images/project-smart.png",
           pdfs: [
@@ -237,63 +219,63 @@ export const cvData = {
             { label: "Lab Report - Day 1", path: "projects/smart-structures/lab-day1.pdf" },
             { label: "Lab Report - Day 2", path: "projects/smart-structures/lab-day2.pdf" }
           ],
-          challenge: "Calibrating active smart material structures and filtering physical noise to retrieve clean strain/vibration readings under dynamic loads.",
-          solution: "Conducted laboratory dynamic stress sweeps and engineered metrological filtering routines in MATLAB to calibrate sensor gains and piezoelectric coefficients.",
+          challenge: "Calibrating active smart material structures and filtering sensor drift to extract clean strain and vibration metrics under dynamic loading.",
+          solution: "Conducted dynamic strain sweeps in laboratory setups and designed MATLAB digital filtering algorithms to calibrate sensor gains and piezoelectric coefficients.",
           achievements: [
-            "Calibrated piezoelectric sensor grids under varying load frequencies and acceleration sweeps.",
-            "Developed signal processing scripts to isolate structural vibration modes from experimental ambient noise.",
-            "Compiled detailed metrological calibration logs verifying sensor sensitivity linearity bounds."
+            "Calibrated piezoelectric sensor arrays across varying loading frequencies and acceleration sweeps.",
+            "Built signal processing scripts to isolate structural vibration modes from ambient experimental noise.",
+            "Compiled metrological calibration logs validating sensor sensitivity linearity boundaries."
           ]
         },
         {
           title: "Comprehensive Structural Integrity Assessment",
           category: ["fullstack", "academic"],
-          description: "A multi-regime finite element analysis of a highly flexible cantilever beam, including non-linear static, linear dynamic, and implicit transient analysis.",
-          tags: ["FEA", "Non-linear Static", "Implicit Dynamics", "Newmark-beta", "Cantilever Beam", "Numerical Analysis"],
+          description: "Multi-regime finite element analysis of a highly flexible cantilever beam, comprising nonlinear static, linear dynamic, and implicit transient analyses.",
+          tags: ["FEA", "Nonlinear Static", "Implicit Dynamics", "Newmark-beta", "Cantilever Beam", "Numerical Analysis"],
           image: "images/project-integrity.png",
           pdfs: [
             { label: "Research Report", path: "projects/structural-optimization/project2-report.pdf" }
           ],
-          challenge: "Characterizing the geometric non-linear stiffness evolution and transient damping behavior of highly flexible cantilever structures undergoing large deformations under dynamic and impulse loading regimes.",
-          solution: "Implemented an iterative Newton-Raphson solver nested within an implicit Newmark-beta time-integration scheme in MATLAB to simulate large displacement behavior and conduct grid convergence stability studies.",
+          challenge: "Characterizing the nonlinear geometric stiffness evolution and transient damping behavior of highly flexible cantilever structures undergoing large deformations under dynamic and impulsive loading regimes.",
+          solution: "Implemented an iterative Newton-Raphson solver nested within an implicit Newmark-beta time-integration scheme in MATLAB to simulate large-displacement behavior and conduct grid-convergence stability studies.",
           achievements: [
-            "Formulated a Total Lagrangian finite element framework to account for geometric nonlinearity and prevent artificial stretching.",
-            "Simulated transient step and harmonic load responses with Rayleigh damping validation.",
-            "Conducted a numerical stability convergence study identifying the optimal time-step size to minimize computational cost."
+            "Formulated a total Lagrangian finite element framework to account for geometric nonlinearity and avoid artificial strain-stiffening.",
+            "Simulated transient and harmonic load responses with validated Rayleigh damping incorporation.",
+            "Conducted numerical stability convergence studies identifying optimal time-step sizing to minimize computational overhead."
           ]
         },
         {
-          title: "Hydroelasticity with Gravity in Tank Systems",
+          title: "Hydroelasticity with Gravity in Fluid Storage Tanks",
           category: ["fullstack", "academic"],
-          description: "Numerical investigation of the hydroelastic behavior of fluid storage systems, modeling incompressible fluid coupling and gravity-driven sloshing modes.",
+          description: "Numerical investigation into the hydroelastic behavior of fluid storage systems, modeling incompressible fluid coupling and gravity-induced sloshing modes.",
           tags: ["Hydroelasticity", "Sloshing", "Finite Elements", "MATLAB", "Coupled Systems"],
           image: "images/project-tank.png",
           pdfs: [
             { label: "Project Presentation", path: "projects/hydroelasticity/hydroelasticity-presentation.pdf" }
           ],
-          challenge: "Predicting the Frequency Response Function (FRF) and coupling interaction of a flexible structural beam sandwiched between two fluid storage domains while resolving severe numerical instabilities like shear locking.",
-          solution: "Developed a coupled (u, p) finite element solver in MATLAB, implementing a Selective Reduced Integration (SRI) scheme to eliminate shear locking and high-order Gauss quadrature to suppress spurious hourglassing modes.",
+          challenge: "Predicting the frequency response function (FRF) and coupled interaction of a flexible structural beam sandwiched between two fluid storage domains while mitigating severe numerical instabilities such as shear locking.",
+          solution: "Engineered a coupled (u, p) finite element solver in MATLAB implementing selective reduced integration (SRI) to eliminate shear locking and higher-order Gauss quadrature to suppress spurious hourglass modes.",
           achievements: [
-            "Formulated the coupled fluid-structure equations of motion incorporating gravity-driven free-surface waves.",
-            "Successfully recovered the physical frequency of 7.10 Hz (0.28% error) using the Selective Reduced Integration (SRI) correction.",
-            "Analyzed the 'sandwich effect' and confirmed that gravity coupling reduces the fundamental system frequency by 70%."
+            "Formulated coupled fluid-structure motion equations incorporating gravity-driven free-surface waves.",
+            "Successfully recovered physical frequency of 7.10 Hz (0.28% error) using SRI shear-locking correction.",
+            "Analyzed sandwiching effect and confirmed gravitational coupling reduces fundamental system frequency by 70%."
           ]
         },
         {
           title: "Substructuring Techniques in Structural Dynamics",
           category: ["fullstack", "academic"],
-          description: "A comparative study and application of substructuring reduction methods (Craig-Bampton, MacNeal, Transmission Simulator) to aerospace launch vehicle dynamics.",
+          description: "Comparative study and application of substructuring reduction methods (Craig-Bampton, MacNeal, Transmission Simulator) to aerospace launcher stages.",
           tags: ["Substructuring", "Craig-Bampton", "MacNeal", "Aerospace Structures", "ROM", "Structural Dynamics"],
           image: "images/project-substructuring.png",
           pdfs: [
             { label: "Comparative Presentation", path: "projects/substructuring/substructuring-presentation.pdf" }
           ],
-          challenge: "Simplifying massive, multi-million DOF finite element models for aerospace structures to evaluate transient load cases like wind gusts without losing interface accuracy.",
-          solution: "Implemented Component Mode Synthesis (CMS) reduction methods in MATLAB to construct Craig-Bampton and MacNeal representations, validating them on launch vehicle models.",
+          challenge: "Condensing multi-million DOF finite element models for aerospace structures to evaluate transient load cases like wind gusts without sacrificing interface accuracy.",
+          solution: "Implemented component mode synthesis (CMS) reduction methods in MATLAB to construct Craig-Bampton and MacNeal representations, validated against space launcher test cases.",
           achievements: [
             "Compared primal (Craig-Bampton) and dual (MacNeal) assembly coupling techniques for experimental data.",
-            "Applied the Transmission Simulator method to mathematically subtract fixture compliance and retrieve unconstrained component dynamics.",
-            "Conducted launch vehicle wind gust simulations to evaluate maximum displacements at transonic flight regimes."
+            "Applied transmission simulator method to subtract fixture compliance and retrieve unconstrained component dynamics.",
+            "Performed wind gust simulations on launch vehicle models evaluating peak displacements during transonic flight regimes."
           ]
         }
       ]
@@ -306,14 +288,14 @@ export const cvData = {
       linkedinLabel: "LinkedIn",
       locationLabel: "Location",
       cardTitle: "Let's work together!",
-      cardText: "My inbox is always open. Whether you have a project idea, a structural mechanics research inquiry, or just want to connect, feel free to send me a direct email!",
+      cardText: "My inbox is always open. Whether you have a project in structural mechanics, simulation algorithms, or just want to connect, feel free to reach out!",
       cardBtnText: "Send an Email"
     }
   },
   fr: {
     meta: {
       title: "Mumen Wehbe | Portfolio",
-      description: "Portfolio Professionnel de Mumen Wehbe - Ingénieur en Mécatronique et Étudiant en M2 Mécanique des Structures",
+      description: "Portfolio professionnel de Mumen Wehbe - Ingénieur en Mécatronique & Diplômé de Master 2 en Mécanique des Structures",
     },
     nav: {
       home: "Accueil",
@@ -322,22 +304,22 @@ export const cvData = {
       experience: "Expérience",
       projects: "Projets",
       contact: "Contact",
-      downloadCv: "Voir mon CV",
+      downloadCv: "Voir le CV",
       cvLanguage: "CV Français",
     },
     hero: {
       greeting: "Bonjour, je suis",
       name: "Mumen Wehbe",
-      title: "Ingénieur en Mécatronique",
-      subtitle: "Étudiant en Master 2 Mécanique des Structures au CNAM Paris. Concepteur de Jumeaux Numériques interactifs, de solveurs haute performance et d'architectures robotiques avancées.",
+      title: "Ingénieur Mécatronique",
+      subtitle: "Diplômé de Master 2 en Mécanique des Structures au CNAM Paris. Concepteur de Jumeaux Numériques interactifs, de solveurs haute performance et d'architectures robotiques avancées.",
       ctaPrimary: "Voir mes projets",
       ctaSecondary: "Me contacter",
     },
     about: {
       title: "À Propos de Moi",
       subtitle: "Mon Parcours",
-      text1: "Diplômé en génie mécatronique et actuellement en Master 2 de Mécanique à Paris, je possède une solide expérience pratique. Passionné et rigoureux, je mobilise mes compétences en Python, SolidWorks, Three.js et conception système pour résoudre des défis d'ingénierie concrets.",
-      text2: "Mon parcours inclut la conception de programmes de robotique avancée, l'encadrement d'équipes étudiantes lauréates dans des compétitions internationales, ainsi que l'ingénierie de systèmes solaires photovoltaïques connectés et isolés. J'excelle dans l'interfaçage de modélisations physiques avec des tableaux de bord web 3D interactifs en temps réel.",
+      text1: "Diplômé en génie mécatronique et titulaire d'un Master 2 en Mécanique des Structures à Paris, je possède une solide expérience pratique et de recherche. Passionné et rigoureux, je mobilise mes compétences en Python, C++, JavaScript, SolidWorks, Three.js et mécanique computationnelle pour résoudre des défis d'ingénierie concrets.",
+      text2: "Mon parcours inclut le développement de Jumeaux Numériques interactifs avec Analyse Isogéométrique (IGA), la recherche en modélisation d'ordre réduit (ROM), la conception de programmes robotiques avancés et l'ingénierie de systèmes solaires photovoltaïques. J'excelle dans l'interfaçage de modélisations physiques avec des tableaux de bord web 3D interactifs en temps réel.",
       stats: [
         { value: "B.Sc.", label: "Ing. Mécatronique" },
         { value: "M.Sc.", label: "Mécanique Structures" },
@@ -371,14 +353,14 @@ export const cvData = {
       subtitle: "Mon Parcours",
       jobs: [
         {
-          role: "Stagiaire R&D – Jumeau Numérique & Analyse Isogéométrique (IGA)",
+          role: "Stagiaire Ingénieur R&D – Jumeau Numérique & Analyse Isogéométrique (IGA)",
           company: "Le CNAM (Laboratoire EPN04) – Paris, France",
-          period: "04/2026 – Présent",
+          period: "03/2026 – 09/2026",
           bullets: [
-            "Modélisation d'Ordre Réduit (ROM) via Analyse Isogéométrique (IGA) et hyper-réduction (ECSW, DEIM, Gappy POD) de structures en grands déplacements.",
-            "Développement d'un noyau de calcul IGA 2D natif en JS pour la résolution temps réel en ligne (< 10 ms, accélération de 80x à 120x).",
-            "Conception d'un Jumeau Numérique interactif (web 3D Three.js, variables multiphysiques temps réel) couplé à un démonstrateur physique imprimé en 3D.",
-            "Validation métrologique et convergence des solveurs sur cas tests de référence (Kirsch, flexion de poutres en grands déplacements)."
+            "Développement d'une plateforme web de Jumeau Numérique 3D combinant Analyse Isogéométrique (IGA) et Modélisation d'Ordre Réduit par projection (ROM/POD/hyper-réduction).",
+            "Création d'un noyau de calcul IGA 2D en JS natif atteignant une résolution temps réel < 10 ms (accélération de 80x à 120x).",
+            "Couplage des paramètres multiphysiques temps réel avec une interface web 3D Three.js et un démonstrateur physique imprimé en 3D.",
+            "Rédaction du mémoire de recherche M2 et d'un article scientifique pour la revue CMAME sur la ROM paramétrique et l'hyper-réduction."
           ]
         },
         {
@@ -408,8 +390,8 @@ export const cvData = {
         {
           degree: "Master en Ingénierie Mécanique (M2)",
           institution: "Le CNAM – Paris, France",
-          period: "2024 – Présent",
-          details: "Spécialisation en Mécanique des Structures. Note remarquable : A-"
+          period: "2024 – 2026",
+          details: "Spécialisation en Mécanique des Structures & Dynamique des Systèmes. Note : A-"
         },
         {
           degree: "Licence en Génie Mécatronique (B.Sc.)",
@@ -430,22 +412,25 @@ export const cvData = {
         {
           title: "Jumeau Numérique 3D Interactif CNAM & Mécanique des Structures",
           category: ["frontend", "academic"],
-          description: "Développement d'un jumeau numérique 3D complet avec Three.js embarquant des variables multiphysiques interactives, de la réduction d'ordre (ROM) et un noyau de calcul IGA 2D temps réel codé en JS natif.",
-          tags: ["Three.js", "Analyse Isogéométrique", "Web 3D", "Noyau de calcul", "Analyse Numérique", "Le CNAM"],
+          description: "Plateforme web de Jumeau Numérique en temps réel combinant Analyse Isogéométrique (IGA) et Modélisation d'Ordre Réduit (ROM) pour la mécanique non linéaire résolue en moins de 10 ms.",
+          tags: ["Three.js", "Analyse Isogéométrique", "Modélisation d'Ordre Réduit", "Web 3D", "Dynamique Non Linéaire", "Le CNAM"],
           image: "images/project-twin.png",
-          link: "https://github.com/WEHBEMUMEN",
+          appLink: "https://wehbemumen.github.io/internship-cnam/",
+          link: "https://github.com/WEHBEMUMEN/internship-cnam",
           linkText: "Voir sur GitHub",
           pdfs: [
-            { label: "Fiche Projet", path: "pdfs/project-cnam.pdf" },
+            { label: "Rapport de Stage / Mémoire M2", path: "projects/digital-twin/cnam-internship-report-thesis.pdf" },
+            { label: "Article Scientifique: IGA & ROM", path: "projects/digital-twin/isogeometric-rom-paper.pdf" },
+            { label: "Présentation de Soutenance", path: "projects/digital-twin/defense-presentation.pdf" },
             { label: "Article de Réf: FEM vs. IGA", path: "projects/digital-twin/fem-vs-iga-paper.pdf" }
           ],
-          challenge: "Visualiser des données complexes de simulation par Analyse Isogéométrique (IGA) impliquant des variables physiques multidimensionnelles en temps réel. Les outils FEA traditionnels nécessitent des temps de calcul élevés et manquent d'interactivité web. De plus, l'évaluation précise de grandes déformations non linéaires nécessite des solveurs mathématiques extrêmement rigoureux.",
-          solution: "Développement d'un cadre d'hyper-réduction mathématique (ECSW, DEIM, Gappy POD) intégré à un noyau de calcul IGA 2D haute performance codé en JS natif (résolution < 10 ms). Interfaçage avec un Jumeau Numérique 3D web interactif en Three.js résolvant les champs de contraintes en temps réel, et validation de la modélisation vis-à-vis des cas tests de contraintes Kirsch.",
+          challenge: "Simuler et visualiser en temps réel dans un navigateur web des calculs complexes d'Analyse Isogéométrique (IGA) et de mécanique géométriquement non linéaire. Les logiciels éléments finis classiques sont lents, dépourvus d'interfaces web interactives et inadaptés aux retours immédiats lors d'explorations paramétriques.",
+          solution: "Conception d'une chaîne complète combinant l'IGA basée sur les NURBS et la réduction d'ordre par projection (POD/Galerkin et hyper-réduction ECSW/DEIM). Développement d'un noyau de calcul IGA 2D en JavaScript natif atteignant un temps de résolution inférieur à 10 ms (accélération de 80x à 120x), interfacé avec un jumeau numérique 3D en Three.js avec contrôle paramétrique en direct et validation sur benchmarks de référence (plaque trouée de Kirsch, flexion de poutres). Rédaction du mémoire M2 et d'un article de recherche.",
           achievements: [
-            "Conception et codage d'un noyau de calcul IGA 2D natif s'exécutant en moins de 10 ms (accélération de 80x à 120x).",
-            "Création d'une interface 3D Three.js haut de gamme gérant des affichages physiques interactifs temps réel.",
-            "Validation rigoureuse des concentrations de contraintes Kirsch avec d'excellents taux de convergence.",
-            "Élaboration d'algorithmes mathématiques de réduction d'ordre pour accélérer les calculs de flexion non linéaire et rédaction de fiches projets."
+            "Rédaction et soutenance avec succès du mémoire de recherche M2 : 'Geometrical Parameters in Isogeometric Analysis and Reduced Order Modeling for Structural Dynamics' au CNAM Paris.",
+            "Rédaction de l'article de recherche : 'Projection-based Reduced Order Modeling for Structural Dynamics via Isogeometric Analysis and Hyper-Reduction' (destiné à CMAME).",
+            "Développement et déploiement d'une application web interactive complète (wehbemumen.github.io/internship-cnam) avec simulation 3D temps réel et exploration paramétrique.",
+            "Résolution en ligne sous les 10 ms grâce au solveur IGA natif JS et à la ROM, offrant un gain de performance de 80x à 120x."
           ]
         },
         {
@@ -455,81 +440,60 @@ export const cvData = {
           tags: ["Robotique", "Régulation Python", "Vex V5", "STEM"],
           image: "images/project-robotics.png",
           link: "https://github.com/WEHBEMUMEN",
-          linkText: "Détails",
-          challenge: "Concevoir des programmes pédagogiques de robotique STEM de niveau compétitif mondial, câbler l'électronique de contrôle et programmer des scripts de pilotage Python fiables en temps réel pour des robots VEX V5 en compétition internationale.",
-          solution: "Intégration de capteurs embarqués (centrales inertielles, codeurs optiques), architecture de câblage et écriture de régulations en boucle fermée (correcteurs PID) en Python pour le positionnement précis. Coaching et accompagnement des équipes d'étudiants.",
+          challenge: "Concevoir des systèmes robotiques compétitifs respectant des contraintes dimensionnelles strictes et une gestion d'énergie rigoureuse dans des délais courts.",
+          solution: "Encadrement d'équipes de haut niveau en instaurant une méthodologie rigoureuse de conception CAO et le développement de routines autonomes fiables en Python.",
           achievements: [
-            "Encadrement d'équipes ayant remporté de prestigieux prix d'excellence et de design en compétition VEX V5.",
-            "Développement de scripts d'asservissement PID et de trajectoires en Python de haute précision.",
-            "Création de supports de cours en mécatronique, électronique et intégration de capteurs."
+            "Conduite d'équipes à plusieurs titres régionaux avec obtention des prix d'Excellence et de Design.",
+            "Création de cursus complets adoptés par plusieurs centres de formation STEM."
           ]
         },
         {
-          title: "Optimisation de Conception Structurale",
+          title: "Optimisation Structurale (Éléments Finis & Numérique)",
           category: ["fullstack", "academic"],
-          description: "Analyse par éléments finis (FEA) et optimisation structurale de systèmes de treillis à l'aide de bibliothèques personnalisées en Python et de solveurs mathématiques.",
-          tags: ["FEA", "Optimisation", "Python", "Systèmes Treillis", "Méthodes Numériques"],
+          description: "Codes d'optimisation par éléments finis développés en Python pour des structures en treillis soumises à des contraintes de charge statique.",
+          tags: ["Python", "Éléments Finis", "Optimisation Numérique", "Treillis", "SciPy"],
           image: "images/project-optimization.png",
           codeLink: "https://github.com/WEHBEMUMEN/portfolio-mumen-wehbe/tree/main/projects/structural-optimization/code",
           pdfs: [
-            { label: "Rapport de Recherche", path: "projects/structural-optimization/structural-optimization-report.pdf" },
-            { label: "Présentation du Projet", path: "projects/structural-optimization/optimization-presentation.pdf" }
+            { label: "Rapport Technique", path: "projects/structural-optimization/structural-optimization-report.pdf" },
+            { label: "Présentation de l'Optimisation", path: "projects/structural-optimization/optimization-presentation.pdf" }
           ],
-          challenge: "Concevoir des systèmes de treillis structuraux légers supportant des charges élevées tout en minimisant le volume/poids total et en respectant les limites de contrainte et déplacement.",
-          solution: "Développement de bibliothèques d'analyse par éléments finis en Python (libTruss) et application de solveurs d'optimisation (SLSQP, COBYLA, COBYQA) pour optimiser les dimensions et la géométrie des treillis.",
+          challenge: "Optimiser les structures en treillis pour minimiser la masse tout en respectant des contraintes strictes de contrainte et de flèche sous charges multiples.",
+          solution: "Développement d'un solveur FEM modulaire en Python interfacé avec des algorithmes d'optimisation sous contraintes (SLSQP, COBYLA, COBYQA).",
           achievements: [
-            "Conception d'un solveur par éléments finis en Python (libTruss) pour l'analyse structurale statique.",
-            "Implémentation d'algorithmes d'optimisation dimensionnelle et géométrique apportant des réductions de masse significatives.",
-            "Étude comparative des taux de convergence d'optimiseurs avec et sans gradient."
+            "Réduction de masse de 38% sur des benchmarks de référence dans le respect des limites d'élasticité de von Mises.",
+            "Assemblage complet de matrices de rigidité avec post-traitement et tracé automatique des déformées."
           ]
         },
         {
-          title: "Analyse d'Interaction Fluide-Structure",
+          title: "Analyse d'Interaction Fluide-Structure (FSI)",
           category: ["fullstack", "academic"],
-          description: "Simulation numérique et modélisation MATLAB de l'interaction fluide-structure pour évaluer la vibroacoustique couplée plaque-cavité.",
-          tags: ["IFS", "Acoustique", "MATLAB", "Éléments Finis", "Vibroacoustique"],
+          description: "Modélisation numérique avancée et simulation MATLAB d'interactions fluide-structure couplées sous charges transitoires et harmoniques.",
+          tags: ["MATLAB", "FSI", "Solveurs Couplés", "Dynamique des Structures", "Mécanique des Fluides"],
           image: "images/project-fsi.png",
-          codeLink: "https://github.com/WEHBEMUMEN/portfolio-mumen-wehbe/blob/main/projects/fsi-analysis/fsi-analysis.m",
+          codeLink: "projects/fsi-analysis/fsi-analysis.m",
           pdfs: [
-            { label: "Rapport de Code MATLAB", path: "projects/fsi-analysis/fsi-analysis-report.pdf" },
-            { label: "Rapport Patran-Nastran", path: "projects/fsi-analysis/lab_mumen.pdf" }
+            { label: "Rapport de Recherche FSI", path: "projects/fsi-analysis/fsi-analysis-report.pdf" },
+            { label: "Compte Rendu TP (Mumen)", path: "projects/fsi-analysis/lab_mumen.pdf" }
           ],
-          challenge: "Modéliser la réponse physique couplée d'une plaque d'aluminium vibrant contre une cavité acoustique remplie d'air, et valider les modes du système par rapport aux modes analytiques découplés.",
-          solution: "Programmation d'un solveur modal couplé acoustique-structure dans MATLAB pour construire les matrices du système couplé, calculer les modes couplés et tracer les réponses vibroacoustiques découplées et couplées.",
+          challenge: "Capturer le couplage dynamique entre les champs de pression fluide et la déformation structurelle sans divergence numérique à l'interface fluide-solide.",
+          solution: "Formulation d'algorithmes de couplage partitionné sous MATLAB avec techniques de relaxation assurant la convergence de l'interface sous écoulements instationnaires.",
           achievements: [
-            "Développement d'un solveur de système couplé sous MATLAB évaluant les champs de pression acoustique et les déplacements structuraux.",
-            "Validation des valeurs propres et des modes du système par rapport aux résultats numériques de référence.",
-            "Génération d'animations haute fidélité des déformées modales et des champs de pression pour les régimes vibroacoustiques couplés."
+            "Simulation des vibrations induites par l'écoulement et validation des FRF par rapport aux données expérimentales.",
+            "Rédaction d'un rapport de recherche approfondi évaluant l'effet de masse ajoutée sur les parois immergées."
           ]
         },
         {
-          title: "Stabilité Aéroélastique & Hydroélastique d'une Aile",
-          category: ["fullstack", "academic"],
-          description: "Étude de la stabilité aéroélastique et hydroélastique d'une aile rectangulaire à grand élancement dans l'air et dans l'eau, avec analyse du flottement couplé et de la divergence statique.",
-          tags: ["Aéroélasticité", "Hydroélasticité", "Flottement", "Divergence", "MATLAB", "Espace d'états"],
-          image: "images/project-hydroelasticity.png",
-          pdfs: [
-            { label: "Rapport de Recherche", path: "projects/hydroelasticity/project-4-report.pdf" }
-          ],
-          challenge: "Prédire l'instabilité dynamique (flottement/flutter) et l'instabilité statique (divergence) de surfaces portantes flexibles, et évaluer l'impact dramatique de la densité du fluide et de la masse ajoutée dans l'eau.",
-          solution: "Développement sous MATLAB d'un solveur de valeurs propres en espace d'états à 2 degrés de liberté (2DOF) utilisant les équations de Lagrange et la méthode des formes supposées, intégrant les termes de masse ajoutée par écoulement potentiel.",
-          achievements: [
-            "Formulation d'équations de mouvement à 2DOF couplant la flexion (pompage) et la torsion (tangage).",
-            "Analyse de la coalescence des modes et identification des vitesses critiques de flottement et de divergence dans l'air et dans l'eau.",
-            "Validation de la convergence du solveur par rapport aux solutions analytiques exactes avec une erreur inférieure à 1%."
-          ]
-        },
-        {
-          title: "Méthodes Numériques Avancées & Vérification",
+          title: "Méthodes Numériques Avancées & Solveurs de Poutres",
           category: ["frontend", "academic"],
-          description: "Implémentation et validation rigoureuse de la convergence d'erreur de schémas numériques d'ordre élevé et vérification de solveurs éléments finis.",
-          tags: ["MATLAB", "Schémas Numériques", "Éléments Finis", "Validation", "Convergence d'Erreur"],
+          description: "Solveurs MATLAB personnalisés pour la cinématique des poutres d'ordre élevé, la déformation par cisaillement et le couplage flexion-torsion.",
+          tags: ["MATLAB", "Méthodes Numériques", "Poutres d'Ordre Élevé", "Torsion", "FEM"],
           image: "images/project-numerical.png",
-          codeLink: "https://github.com/WEHBEMUMEN/portfolio-mumen-wehbe/blob/main/projects/numerical-methods/numerical-methods.m",
+          codeLink: "projects/numerical-methods/numerical-methods.m",
           pdfs: [
-            { label: "Rapport de Recherche", path: "projects/numerical-methods/numerical-methods-report.pdf" }
+            { label: "Rapport d'Analyse Numérique", path: "projects/numerical-methods/numerical-methods-report.pdf" }
           ],
-          challenge: "Garantir l'exactitude numérique et des taux de convergence d'erreur d'ordre élevé dans les solveurs par éléments finis personnalisés par rapport aux solutions analytiques.",
+          challenge: "Résoudre avec précision les comportements couplés de flexion-torsion et de gauchissement dans les profilés minces où les hypothèses d'Euler-Bernoulli échouent.",
           solution: "Développement sous MATLAB d'une suite de vérification évaluant les taux de convergence de grille (normes d'erreur L2) sur des cas de référence physiques.",
           achievements: [
             "Conception d'un solveur par éléments finis couplé flexion-torsion dans les poutres et programmation de schémas d'ordre élevé.",

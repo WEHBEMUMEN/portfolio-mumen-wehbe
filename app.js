@@ -443,21 +443,26 @@ function renderProjectCards(projectsList, data) {
   if (projectsList.length === 0) {
     elements.projectsGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No projects found in this category.</p>`;
     return;
-  }
-  
-  elements.projectsGrid.innerHTML = projectsList.map(project => {
-    // Generate links HTML for dual resource links (GitHub + Code + PDF)
+   elements.projectsGrid.innerHTML = projectsList.map(project => {
+    // Generate links HTML for dual resource links (App + GitHub + Code + PDF)
     let linksHtml = '';
+    if (project.appLink) {
+      linksHtml += `
+        <a href="${project.appLink}" target="_blank" class="project-link" style="display: flex; align-items: center; gap: 0.35rem; color: var(--accent-cyan); font-weight: 600;">
+          ${currentLang === 'en' ? 'Live App' : 'App en direct'} <i data-lucide="external-link" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+        </a>
+      `;
+    }
     if (project.link) {
       linksHtml += `
         <a href="${project.link}" target="_blank" class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
-          ${project.linkText || (currentLang === 'en' ? 'GitHub' : 'GitHub')} <i data-lucide="external-link" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+          ${project.linkText || (currentLang === 'en' ? 'GitHub' : 'GitHub')} <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
         </a>
       `;
     }
     if (project.codeLink) {
       linksHtml += `
-        <a href="${project.codeLink}" target="_blank" class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="${project.codeLink.startsWith('http') ? project.codeLink : project.codeLink}" target="_blank" class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
           ${currentLang === 'en' ? 'Code' : 'Code'} <i data-lucide="code" style="width: 16px; height: 16px; stroke-width: 2;"></i>
         </a>
       `;
@@ -465,7 +470,7 @@ function renderProjectCards(projectsList, data) {
     if (project.pdfs && project.pdfs.length > 0) {
       linksHtml += `
         <a href="${project.pdfs[0].path}" target="_blank" class="project-link" style="display: flex; align-items: center; gap: 0.35rem;">
-          ${currentLang === 'en' ? 'Project Sheet' : 'Fiche Projet'} <i data-lucide="file-text" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+          ${project.pdfs[0].label} <i data-lucide="file-text" style="width: 16px; height: 16px; stroke-width: 2;"></i>
         </a>
       `;
     } else if (project.pdfLink) {
@@ -583,18 +588,27 @@ function openProjectModal(index) {
 
   // Construct modal footer action links
   let modalActionsHtml = '';
-  if (project.link) {
+  if (project.appLink) {
     modalActionsHtml += `
-      <a href="${project.link}" target="_blank" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+      <a href="${project.appLink}" target="_blank" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+        <i data-lucide="external-link" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+        ${currentLang === 'en' ? 'Launch Web App' : 'Lancer l\'App Web'}
+      </a>
+    `;
+  }
+  if (project.link) {
+    const btnClass = project.appLink ? 'btn-secondary' : 'btn-primary';
+    modalActionsHtml += `
+      <a href="${project.link}" target="_blank" class="btn ${btnClass}" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
         ${currentLang === 'en' ? 'View GitHub' : 'Voir sur GitHub'}
       </a>
     `;
   }
   if (project.codeLink) {
-    const btnClass = project.link ? 'btn-secondary' : 'btn-primary';
+    const btnClass = (project.appLink || project.link) ? 'btn-secondary' : 'btn-primary';
     modalActionsHtml += `
-      <a href="${project.codeLink}" target="_blank" class="btn ${btnClass}" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+      <a href="${project.codeLink.startsWith('http') ? project.codeLink : project.codeLink}" target="_blank" class="btn ${btnClass}" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
         <i data-lucide="code" style="width: 16px; height: 16px;"></i>
         ${currentLang === 'en' ? 'View Code' : 'Voir le Code'}
       </a>
@@ -602,7 +616,7 @@ function openProjectModal(index) {
   }
   if (project.pdfs && project.pdfs.length > 0) {
     project.pdfs.forEach((pdf) => {
-      const hasPrimary = project.link || project.codeLink;
+      const hasPrimary = project.appLink || project.link || project.codeLink;
       const btnClass = hasPrimary ? 'btn-secondary' : 'btn-primary';
       modalActionsHtml += `
         <a href="${pdf.path}" target="_blank" class="btn ${btnClass}" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
@@ -612,7 +626,7 @@ function openProjectModal(index) {
       `;
     });
   } else if (project.pdfLink) {
-    const hasPrimary = project.link || project.codeLink;
+    const hasPrimary = project.appLink || project.link || project.codeLink;
     const btnClass = hasPrimary ? 'btn-secondary' : 'btn-primary';
     modalActionsHtml += `
       <a href="${project.pdfLink}" target="_blank" class="btn ${btnClass}" style="padding: 0.75rem 1.5rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">

@@ -141,17 +141,20 @@ export const cvData = {
           ]
         },
         {
-          title: "VEX V5 Competitive Robotics",
-          category: "fullstack",
-          description: "Curriculum engineering, electronics wiring, and Python controls design for award-winning VEX V5 teams in international robotics competitions.",
-          tags: ["Robotics", "Python Control", "Vex V5", "STEM"],
-          image: "images/project-robotics.png",
-          link: "https://github.com/WEHBEMUMEN",
-          challenge: "Designing competition-ready robotics systems within strict dimensional rules, power budgets, and complex match game strategies under intense time pressure.",
-          solution: "Mentored high-performing teams by establishing structured mechanical design iterations in CAD and writing robust, modular autonomous routines in Python.",
+          title: "Hydroelasticity with Gravity in Fluid Storage Tanks",
+          category: ["fullstack", "academic"],
+          description: "Numerical investigation into the hydroelastic behavior of fluid storage systems, modeling incompressible fluid coupling and gravity-induced sloshing modes.",
+          tags: ["Hydroelasticity", "Sloshing", "Finite Elements", "MATLAB", "Coupled Systems"],
+          image: "images/project-tank.png",
+          pdfs: [
+            { label: "Project Presentation", path: "projects/hydroelasticity/hydroelasticity-presentation.pdf" }
+          ],
+          challenge: "Predicting the frequency response function (FRF) and coupled interaction of a flexible structural beam sandwiched between two fluid storage domains while mitigating severe numerical instabilities such as shear locking.",
+          solution: "Engineered a coupled (u, p) finite element solver in MATLAB implementing selective reduced integration (SRI) to eliminate shear locking and higher-order Gauss quadrature to suppress spurious hourglass modes.",
           achievements: [
-            "Coached teams to multiple regional championship titles and secured Excellence and Design Awards.",
-            "Formulated comprehensive instructional roadmaps adopted across multiple STEM education facilities."
+            "Formulated coupled fluid-structure motion equations incorporating gravity-driven free-surface waves.",
+            "Successfully recovered physical frequency of 7.10 Hz (0.28% error) using SRI shear-locking correction.",
+            "Analyzed sandwiching effect and confirmed gravitational coupling reduces fundamental system frequency by 70%."
           ]
         },
         {
@@ -170,6 +173,40 @@ export const cvData = {
           achievements: [
             "Achieved 38% mass reduction on reference benchmarks while rigorously adhering to von Mises yield limits.",
             "Implemented stiffness matrix assembly from scratch with automated post-processing and displacement plotting."
+          ]
+        },
+        {
+          title: "Comprehensive Structural Integrity Assessment",
+          category: ["fullstack", "academic"],
+          description: "Multi-regime finite element analysis of a highly flexible cantilever beam, comprising nonlinear static, linear dynamic, and implicit transient analyses.",
+          tags: ["FEA", "Nonlinear Static", "Implicit Dynamics", "Newmark-beta", "Cantilever Beam", "Numerical Analysis"],
+          image: "images/project-integrity.png",
+          pdfs: [
+            { label: "Research Report", path: "projects/structural-optimization/project2-report.pdf" }
+          ],
+          challenge: "Characterizing the nonlinear geometric stiffness evolution and transient damping behavior of highly flexible cantilever structures undergoing large deformations under dynamic and impulsive loading regimes.",
+          solution: "Implemented an iterative Newton-Raphson solver nested within an implicit Newmark-beta time-integration scheme in MATLAB to simulate large-displacement behavior and conduct grid-convergence stability studies.",
+          achievements: [
+            "Formulated a total Lagrangian finite element framework to account for geometric nonlinearity and avoid artificial strain-stiffening.",
+            "Simulated transient and harmonic load responses with validated Rayleigh damping incorporation.",
+            "Conducted numerical stability convergence studies identifying optimal time-step sizing to minimize computational overhead."
+          ]
+        },
+        {
+          title: "Substructuring Techniques in Structural Dynamics",
+          category: ["fullstack", "academic"],
+          description: "Comparative study and application of substructuring reduction methods (Craig-Bampton, MacNeal, Transmission Simulator) to aerospace launcher stages.",
+          tags: ["Substructuring", "Craig-Bampton", "MacNeal", "Aerospace Structures", "ROM", "Structural Dynamics"],
+          image: "images/project-substructuring.png",
+          pdfs: [
+            { label: "Comparative Presentation", path: "projects/substructuring/substructuring-presentation.pdf" }
+          ],
+          challenge: "Condensing multi-million DOF finite element models for aerospace structures to evaluate transient load cases like wind gusts without sacrificing interface accuracy.",
+          solution: "Implemented component mode synthesis (CMS) reduction methods in MATLAB to construct Craig-Bampton and MacNeal representations, validated against space launcher test cases.",
+          achievements: [
+            "Compared primal (Craig-Bampton) and dual (MacNeal) assembly coupling techniques for experimental data.",
+            "Applied transmission simulator method to subtract fixture compliance and retrieve unconstrained component dynamics.",
+            "Performed wind gust simulations on launch vehicle models evaluating peak displacements during transonic flight regimes."
           ]
         },
         {
@@ -245,54 +282,17 @@ export const cvData = {
           ]
         },
         {
-          title: "Comprehensive Structural Integrity Assessment",
-          category: ["fullstack", "academic"],
-          description: "Multi-regime finite element analysis of a highly flexible cantilever beam, comprising nonlinear static, linear dynamic, and implicit transient analyses.",
-          tags: ["FEA", "Nonlinear Static", "Implicit Dynamics", "Newmark-beta", "Cantilever Beam", "Numerical Analysis"],
-          image: "images/project-integrity.png",
-          pdfs: [
-            { label: "Research Report", path: "projects/structural-optimization/project2-report.pdf" }
-          ],
-          challenge: "Characterizing the nonlinear geometric stiffness evolution and transient damping behavior of highly flexible cantilever structures undergoing large deformations under dynamic and impulsive loading regimes.",
-          solution: "Implemented an iterative Newton-Raphson solver nested within an implicit Newmark-beta time-integration scheme in MATLAB to simulate large-displacement behavior and conduct grid-convergence stability studies.",
+          title: "VEX V5 Competitive Robotics",
+          category: "fullstack",
+          description: "Curriculum engineering, electronics wiring, and Python controls design for award-winning VEX V5 teams in international robotics competitions.",
+          tags: ["Robotics", "Python Control", "Vex V5", "STEM"],
+          image: "images/project-robotics.png",
+          link: "https://github.com/WEHBEMUMEN",
+          challenge: "Designing competition-ready robotics systems within strict dimensional rules, power budgets, and complex match game strategies under intense time pressure.",
+          solution: "Mentored high-performing teams by establishing structured mechanical design iterations in CAD and writing robust, modular autonomous routines in Python.",
           achievements: [
-            "Formulated a total Lagrangian finite element framework to account for geometric nonlinearity and avoid artificial strain-stiffening.",
-            "Simulated transient and harmonic load responses with validated Rayleigh damping incorporation.",
-            "Conducted numerical stability convergence studies identifying optimal time-step sizing to minimize computational overhead."
-          ]
-        },
-        {
-          title: "Hydroelasticity with Gravity in Fluid Storage Tanks",
-          category: ["fullstack", "academic"],
-          description: "Numerical investigation into the hydroelastic behavior of fluid storage systems, modeling incompressible fluid coupling and gravity-induced sloshing modes.",
-          tags: ["Hydroelasticity", "Sloshing", "Finite Elements", "MATLAB", "Coupled Systems"],
-          image: "images/project-tank.png",
-          pdfs: [
-            { label: "Project Presentation", path: "projects/hydroelasticity/hydroelasticity-presentation.pdf" }
-          ],
-          challenge: "Predicting the frequency response function (FRF) and coupled interaction of a flexible structural beam sandwiched between two fluid storage domains while mitigating severe numerical instabilities such as shear locking.",
-          solution: "Engineered a coupled (u, p) finite element solver in MATLAB implementing selective reduced integration (SRI) to eliminate shear locking and higher-order Gauss quadrature to suppress spurious hourglass modes.",
-          achievements: [
-            "Formulated coupled fluid-structure motion equations incorporating gravity-driven free-surface waves.",
-            "Successfully recovered physical frequency of 7.10 Hz (0.28% error) using SRI shear-locking correction.",
-            "Analyzed sandwiching effect and confirmed gravitational coupling reduces fundamental system frequency by 70%."
-          ]
-        },
-        {
-          title: "Substructuring Techniques in Structural Dynamics",
-          category: ["fullstack", "academic"],
-          description: "Comparative study and application of substructuring reduction methods (Craig-Bampton, MacNeal, Transmission Simulator) to aerospace launcher stages.",
-          tags: ["Substructuring", "Craig-Bampton", "MacNeal", "Aerospace Structures", "ROM", "Structural Dynamics"],
-          image: "images/project-substructuring.png",
-          pdfs: [
-            { label: "Comparative Presentation", path: "projects/substructuring/substructuring-presentation.pdf" }
-          ],
-          challenge: "Condensing multi-million DOF finite element models for aerospace structures to evaluate transient load cases like wind gusts without sacrificing interface accuracy.",
-          solution: "Implemented component mode synthesis (CMS) reduction methods in MATLAB to construct Craig-Bampton and MacNeal representations, validated against space launcher test cases.",
-          achievements: [
-            "Compared primal (Craig-Bampton) and dual (MacNeal) assembly coupling techniques for experimental data.",
-            "Applied transmission simulator method to subtract fixture compliance and retrieve unconstrained component dynamics.",
-            "Performed wind gust simulations on launch vehicle models evaluating peak displacements during transonic flight regimes."
+            "Coached teams to multiple regional championship titles and secured Excellence and Design Awards.",
+            "Formulated comprehensive instructional roadmaps adopted across multiple STEM education facilities."
           ]
         }
       ]
@@ -451,17 +451,20 @@ export const cvData = {
           ]
         },
         {
-          title: "Robotique Compétitive VEX V5",
-          category: "fullstack",
-          description: "Ingénierie de programmes d'asservissement robotique, câblage électronique et régulation Python pour des équipes lauréates de compétitions internationales.",
-          tags: ["Robotique", "Régulation Python", "Vex V5", "STEM"],
-          image: "images/project-robotics.png",
-          link: "https://github.com/WEHBEMUMEN",
-          challenge: "Concevoir des systèmes robotiques compétitifs respectant des contraintes dimensionnelles strictes et une gestion d'énergie rigoureuse dans des délais courts.",
-          solution: "Encadrement d'équipes de haut niveau en instaurant une méthodologie rigoureuse de conception CAO et le développement de routines autonomes fiables en Python.",
+          title: "Hydroélasticité avec Gravité dans les Réservoirs",
+          category: ["fullstack", "academic"],
+          description: "Étude numérique du comportement hydroélastique des systèmes de stockage de fluides, modélisant le couplage fluide incompressible et les modes de ballottement induits par la gravité.",
+          tags: ["Hydroélasticité", "Ballottement", "Éléments Finis", "MATLAB", "Systèmes Couplés"],
+          image: "images/project-tank.png",
+          pdfs: [
+            { label: "Présentation du Projet", path: "projects/hydroelasticity/hydroelasticity-presentation.pdf" }
+          ],
+          challenge: "Prédire la fonction de réponse en fréquence (FRF) et l'interaction de couplage d'une poutre structurelle flexible prise en sandwich entre deux domaines de stockage de fluide tout en résolvant des instabilités numériques sévères comme le verrouillage en cisaillement.",
+          solution: "Développement d'un solveur par éléments finis couplé (u, p) dans MATLAB, mettant en œuvre un schéma d'intégration réduite sélective (SRI) pour éliminer le verrouillage en cisaillement et une quadrature de Gauss d'ordre élevé pour supprimer les modes de sablier parasites.",
           achievements: [
-            "Conduite d'équipes à plusieurs titres régionaux avec obtention des prix d'Excellence et de Design.",
-            "Création de cursus complets adoptés par plusieurs centres de formation STEM."
+            "Formulation des équations de mouvement couplées fluide-structure intégrant les ondes de surface libre entraînées par la gravité.",
+            "Récupération réussie de la fréquence physique de 7,10 Hz (erreur de 0,28%) à l'aide de la correction SRI.",
+            "Analyse de l'effet 'sandwich' et confirmation que le couplage gravitationnel réduit la fréquence fondamentale du système de 70%."
           ]
         },
         {
@@ -480,6 +483,40 @@ export const cvData = {
           achievements: [
             "Réduction de masse de 38% sur des benchmarks de référence dans le respect des limites d'élasticité de von Mises.",
             "Assemblage complet de matrices de rigidité avec post-traitement et tracé automatique des déformées."
+          ]
+        },
+        {
+          title: "Évaluation Complète de l'Intégrité Structurale",
+          category: ["fullstack", "academic"],
+          description: "Analyse par éléments finis multi-régimes d'une poutre cantilever hautement flexible, comprenant des analyses statiques non linéaires, dynamiques linéaires et transitoires implicites.",
+          tags: ["FEA", "Statique Non-linéaire", "Dynamique Implicite", "Newmark-bêta", "Poutre Cantilever", "Analyse Numérique"],
+          image: "images/project-integrity.png",
+          pdfs: [
+            { label: "Rapport de Recherche", path: "projects/structural-optimization/project2-report.pdf" }
+          ],
+          challenge: "Caractériser l'évolution de la rigidité géométrique non linéaire et le comportement d'amortissement transitoire de structures cantilever très flexibles subissant de grandes déformations sous des régimes de charge dynamique et impulsionnelle.",
+          solution: "Mise en œuvre d'un solveur itératif Newton-Raphson imbriqué dans un schéma d'intégration temporelle implicite Newmark-bêta dans MATLAB pour simuler le comportement en grands déplacements et mener des études de stabilité de convergence de grille.",
+          achievements: [
+            "Formulation d'un cadre d'éléments finis Lagrangien total pour prendre en compte la non-linéarité géométrique et éviter l'étirement artificiel.",
+            "Simulation des réponses aux charges transitoires et harmoniques avec validation de l'amortissement de Rayleigh.",
+            "Réalisation d'une étude de convergence de stabilité numérique identifiant la taille optimale du pas de temps pour minimiser le coût de calcul."
+          ]
+        },
+        {
+          title: "Techniques de Sous-structuration en Dynamique des Structures",
+          category: ["fullstack", "academic"],
+          description: "Étude comparative et application de méthodes de réduction par sous-structuration (Craig-Bampton, MacNeal, Simulateur de Transmission) aux lanceurs aérospatiaux.",
+          tags: ["Sous-structuration", "Craig-Bampton", "MacNeal", "Structures Aérospatiales", "ROM", "Dynamique des Structures"],
+          image: "images/project-substructuring.png",
+          pdfs: [
+            { label: "Présentation Comparative", path: "projects/substructuring/substructuring-presentation.pdf" }
+          ],
+          challenge: "Simplifier des modèles éléments finis de plusieurs millions de degrés de liberté pour des structures aérospatiales afin d'évaluer des cas de charges transitoires comme les rafales de vent sans perdre de précision aux interfaces.",
+          solution: "Mise en œuvre de méthodes de réduction par synthèse modale (CMS) sous MATLAB pour construire des représentations de Craig-Bampton et MacNeal, avec validation sur des modèles de lanceurs spatiaux.",
+          achievements: [
+            "Comparaison des techniques de couplage par assemblage primal (Craig-Bampton) et dual (MacNeal) pour les données expérimentales.",
+            "Application de la méthode du simulateur de transmission pour soustraire mathématiquement la souplesse du montage et récupérer la dynamique des composants non contraints.",
+            "Réalisation de simulations de rafales de vent sur des lanceurs pour évaluer les déplacements maximaux en régimes de vol transsoniques."
           ]
         },
         {
@@ -555,54 +592,17 @@ export const cvData = {
           ]
         },
         {
-          title: "Évaluation Complète de l'Intégrité Structurale",
-          category: ["fullstack", "academic"],
-          description: "Analyse par éléments finis multi-régimes d'une poutre cantilever hautement flexible, comprenant des analyses statiques non linéaires, dynamiques linéaires et transitoires implicites.",
-          tags: ["FEA", "Statique Non-linéaire", "Dynamique Implicite", "Newmark-bêta", "Poutre Cantilever", "Analyse Numérique"],
-          image: "images/project-integrity.png",
-          pdfs: [
-            { label: "Rapport de Recherche", path: "projects/structural-optimization/project2-report.pdf" }
-          ],
-          challenge: "Caractériser l'évolution de la rigidité géométrique non linéaire et le comportement d'amortissement transitoire de structures cantilever très flexibles subissant de grandes déformations sous des régimes de charge dynamique et impulsionnelle.",
-          solution: "Mise en œuvre d'un solveur itératif Newton-Raphson imbriqué dans un schéma d'intégration temporelle implicite Newmark-bêta dans MATLAB pour simuler le comportement en grands déplacements et mener des études de stabilité de convergence de grille.",
+          title: "Robotique Compétitive VEX V5",
+          category: "fullstack",
+          description: "Ingénierie de programmes d'asservissement robotique, câblage électronique et régulation Python pour des équipes lauréates de compétitions internationales.",
+          tags: ["Robotique", "Régulation Python", "Vex V5", "STEM"],
+          image: "images/project-robotics.png",
+          link: "https://github.com/WEHBEMUMEN",
+          challenge: "Concevoir des systèmes robotiques compétitifs respectant des contraintes dimensionnelles strictes et une gestion d'énergie rigoureuse dans des délais courts.",
+          solution: "Encadrement d'équipes de haut niveau en instaurant une méthodologie rigoureuse de conception CAO et le développement de routines autonomes fiables en Python.",
           achievements: [
-            "Formulation d'un cadre d'éléments finis Lagrangien total pour prendre en compte la non-linéarité géométrique et éviter l'étirement artificiel.",
-            "Simulation des réponses aux charges transitoires et harmoniques avec validation de l'amortissement de Rayleigh.",
-            "Réalisation d'une étude de convergence de stabilité numérique identifiant la taille optimale du pas de temps pour minimiser le coût de calcul."
-          ]
-        },
-        {
-          title: "Hydroélasticité avec Gravité dans les Réservoirs",
-          category: ["fullstack", "academic"],
-          description: "Étude numérique du comportement hydroélastique des systèmes de stockage de fluides, modélisant le couplage fluide incompressible et les modes de ballottement induits par la gravité.",
-          tags: ["Hydroélasticité", "Ballottement", "Éléments Finis", "MATLAB", "Systèmes Couplés"],
-          image: "images/project-tank.png",
-          pdfs: [
-            { label: "Présentation du Projet", path: "projects/hydroelasticity/hydroelasticity-presentation.pdf" }
-          ],
-          challenge: "Prédire la fonction de réponse en fréquence (FRF) et l'interaction de couplage d'une poutre structurelle flexible prise en sandwich entre deux domaines de stockage de fluide tout en résolvant des instabilités numériques sévères comme le verrouillage en cisaillement.",
-          solution: "Développement d'un solveur par éléments finis couplé (u, p) dans MATLAB, mettant en œuvre un schéma d'intégration réduite sélective (SRI) pour éliminer le verrouillage en cisaillement et une quadrature de Gauss d'ordre élevé pour supprimer les modes de sablier parasites.",
-          achievements: [
-            "Formulation des équations de mouvement couplées fluide-structure intégrant les ondes de surface libre entraînées par la gravité.",
-            "Récupération réussie de la fréquence physique de 7,10 Hz (erreur de 0,28%) à l'aide de la correction SRI.",
-            "Analyse de l'effet 'sandwich' et confirmation que le couplage gravitationnel réduit la fréquence fondamentale du système de 70%."
-          ]
-        },
-        {
-          title: "Techniques de Sous-structuration en Dynamique des Structures",
-          category: ["fullstack", "academic"],
-          description: "Étude comparative et application de méthodes de réduction par sous-structuration (Craig-Bampton, MacNeal, Simulateur de Transmission) aux lanceurs aérospatiaux.",
-          tags: ["Sous-structuration", "Craig-Bampton", "MacNeal", "Structures Aérospatiales", "ROM", "Dynamique des Structures"],
-          image: "images/project-substructuring.png",
-          pdfs: [
-            { label: "Présentation Comparative", path: "projects/substructuring/substructuring-presentation.pdf" }
-          ],
-          challenge: "Simplifier des modèles éléments finis de plusieurs millions de degrés de liberté pour des structures aérospatiales afin d'évaluer des cas de charges transitoires comme les rafales de vent sans perdre de précision aux interfaces.",
-          solution: "Mise en œuvre de méthodes de réduction par synthèse modale (CMS) sous MATLAB pour construire des représentations de Craig-Bampton et MacNeal, avec validation sur des modèles de lanceurs spatiaux.",
-          achievements: [
-            "Comparaison des techniques de couplage par assemblage primal (Craig-Bampton) et dual (MacNeal) pour les données expérimentales.",
-            "Application de la méthode du simulateur de transmission pour soustraire mathématiquement la souplesse du montage et récupérer la dynamique des composants non contraints.",
-            "Réalisation de simulations de rafales de vent sur des lanceurs pour évaluer les déplacements maximaux en régimes de vol transsoniques."
+            "Conduite d'équipes à plusieurs titres régionaux avec obtention des prix d'Excellence et de Design.",
+            "Création de cursus complets adoptés par plusieurs centres de formation STEM."
           ]
         }
       ]

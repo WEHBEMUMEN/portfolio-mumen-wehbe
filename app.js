@@ -239,8 +239,8 @@ function renderPage(lang) {
   
   // Group skills by category
   const categorizedSkills = {
-    frontend: [],
     backend: [],
+    frontend: [],
     tools: []
   };
   
@@ -257,29 +257,12 @@ function renderPage(lang) {
         <i data-lucide="${getCategoryIcon(catKey)}" style="width: 22px; height: 22px; stroke-width: 2; color: var(--accent-cyan);"></i>
         ${data.skills.categories[catKey]}
       </h3>
-      <div class="skill-list">
-        ${skills.map(skill => `
-          <div class="skill-item">
-            <div class="skill-info">
-              <span class="skill-name">${skill.name}</span>
-              <span class="skill-percentage">${skill.level}%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-level="${skill.level}"></div>
-            </div>
-          </div>
-        `).join('')}
+      <div class="project-tags">
+        ${skills.map(skill => `<span class="project-tag">${skill.name}</span>`).join('')}
       </div>
     </div>
   `).join('');
   
-  // Animate skill bars in micro-timeout
-  setTimeout(() => {
-    document.querySelectorAll('.skill-bar-fill').forEach(fill => {
-      const level = fill.getAttribute('data-level');
-      fill.style.width = `${level}%`;
-    });
-  }, 100);
   
   // 6. Experience Section
   elements.expTitle.textContent = data.experience.title;
